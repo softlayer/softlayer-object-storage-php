@@ -4,7 +4,7 @@ PHP bindings for SoftLayer Object Storage
 
 
 # Install
-Unzip the files and make sure to include Swift/Util.php once somewhere your script
+Unzip the files and make sure to include lib/ObjectStorage/Util.php once somewhere your script
 
 # Requirements
     * Mandatory
