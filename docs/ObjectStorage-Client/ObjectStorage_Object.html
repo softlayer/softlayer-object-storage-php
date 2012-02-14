@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class ObjectStorage_Object</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class ObjectStorage_Object
+</h2> (line <span class="linenumber">10</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+<a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a>
+   |
+   --ObjectStorage_Object</pre>
+<p>
+	<b><i>Located in File: <a href="_lib---ObjectStorage---Object.php.html">/lib/ObjectStorage/Object.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>This class represents a ObjectStorage object.</h5>
+<ul>
+		<li><strong>copyright:</strong> - Copyright (c) 2012 SoftLayer Technologies Inc. (http://www.softlayer.com)</li>
+		<li><strong>see:</strong> - <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a></li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    static <span class="var-type">mixed</span>
+    <a href="#var$skipOverwriteHeaders" title="details" class="property"><strong>$skipOverwriteHeaders</strong></a>
+</div>
+<hr />
+<a name="var$skipOverwriteHeaders" id="var$skipOverwriteHeaders"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">static $skipOverwriteHeaders = array('ETAG', 'ACCEPT-RANGES', 'LAST-MODIFIED', 'DATE', 'CONNECTION', 'CONTENT-LENGTH')</strong> (line <span class="linenumber">12</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - public</li>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodcreate" title="details" class="method-name">create</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetMetaPrefix" title="details" class="method-name">getMetaPrefix</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methodloadCache" title="details" class="method-name">loadCache</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methodpurgeCache" title="details" class="method-name">purgeCache</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodupdate" title="details" class="method-name">update</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#method__toString" title="details" class="method-name">__toString</a>
+        ()
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodcreate" id="methodcreate"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method create</strong> (line <span class="linenumber">28</span>)
+ </h4> 
+<h4><i>void</i> <strong>create(
+)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodcreate">ObjectStorage_Abstract::create()</a> Creates a container or an object on ObjectStorage</p>
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>(non-PHPdoc)</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>see</strong> - <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodcreate">ObjectStorage_Abstract::create()</a></li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodgetMetaPrefix" id="methodgetMetaPrefix"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getMetaPrefix</strong> (line <span class="linenumber">14</span>)
+ </h4> 
+<h4><i>void</i> <strong>getMetaPrefix(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methodloadCache" id="methodloadCache"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method loadCache</strong> (line <span class="linenumber">79</span>)
+ </h4> 
+<h4><i>bool</i> <strong>loadCache(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Load object to CDN. This method is only applicable to objects in CDN enabled containers</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodpurgeCache" id="methodpurgeCache"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method purgeCache</strong> (line <span class="linenumber">61</span>)
+ </h4> 
+<h4><i>bool</i> <strong>purgeCache(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Removes CDN cache. This method is only applicable to objects in CDN enabled containers</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodupdate" id="methodupdate"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method update</strong> (line <span class="linenumber">41</span>)
+ </h4> 
+<h4><i>void</i> <strong>update(
+)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodupdate">ObjectStorage_Abstract::update()</a> Updates a container or an object on ObjectStorage</p>
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>(non-PHPdoc)</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>see</strong> - <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodupdate">ObjectStorage_Abstract::update()</a></li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="method__toString" id="method__toString"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method __toString</strong> (line <span class="linenumber">19</span>)
+ </h4> 
+<h4><i>void</i> <strong>__toString(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a></h4>
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#var$containerCount">ObjectStorage_Abstract::$containerCount</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#var$containers">ObjectStorage_Abstract::$containers</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#var$context">ObjectStorage_Abstract::$context</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#var$httpClient">ObjectStorage_Abstract::$httpClient</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#var$limit">ObjectStorage_Abstract::$limit</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#var$marker">ObjectStorage_Abstract::$marker</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#var$mime">ObjectStorage_Abstract::$mime</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#var$objectCount">ObjectStorage_Abstract::$objectCount</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#var$objects">ObjectStorage_Abstract::$objects</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#var$objectStorage">ObjectStorage_Abstract::$objectStorage</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#var$path">ObjectStorage_Abstract::$path</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#var$request">ObjectStorage_Abstract::$request</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#var$response">ObjectStorage_Abstract::$response</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#var$searchFilters">ObjectStorage_Abstract::$searchFilters</a></strong> - 
+	</h4> 
+		</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a></h4>
+				<h4>
+<img src="../media/images/Constructor.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#method__construct">ObjectStorage_Abstract::__construct()</a></strong> - Constructor.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodcreate">ObjectStorage_Abstract::create()</a></strong> - Creates a container or an object on ObjectStorage
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methoddelete">ObjectStorage_Abstract::delete()</a></strong> - Deletes a container or an object on ObjectStorage
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodget">ObjectStorage_Abstract::get()</a></strong> - Retrieves the container or object data from ObjectStorage  $limit and $marker will not be taken into consideration when dealing with an object.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetBody">ObjectStorage_Abstract::getBody()</a></strong> - Gets body data from response object
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetCdnUrls">ObjectStorage_Abstract::getCdnUrls()</a></strong> - Returns all CDN URLs
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetContainerCount">ObjectStorage_Abstract::getContainerCount()</a></strong> - Returns total number of containers
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetContext">ObjectStorage_Abstract::getContext()</a></strong> - Returns the ObjectStorage context value
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetHeader">ObjectStorage_Abstract::getHeader()</a></strong> - Gets a response header by key
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetHeaders">ObjectStorage_Abstract::getHeaders()</a></strong> - Gets an array of response headers
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetInfo">ObjectStorage_Abstract::getInfo()</a></strong> - Returns the header and meta data of a container or an object.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetMeta">ObjectStorage_Abstract::getMeta()</a></strong> - Gets a meta data by key in the response
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetObjectCount">ObjectStorage_Abstract::getObjectCount()</a></strong> - Returns total number of objects within the current container
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetPath">ObjectStorage_Abstract::getPath()</a></strong> - Returns the ObjectStorage path
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetRequest">ObjectStorage_Abstract::getRequest()</a></strong> - Return ObjectStorage_Http_Request object
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetResponse">ObjectStorage_Abstract::getResponse()</a></strong> - Returns ObjectStorage_Http_Response object
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetStatusCode">ObjectStorage_Abstract::getStatusCode()</a></strong> - Returns response HTTP status code
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetTtl">ObjectStorage_Abstract::getTtl()</a></strong> - Gets a TTL value for a container or an object from HTTP response
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetUrl">ObjectStorage_Abstract::getUrl()</a></strong> - Returns the full ObjectStorage URL
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodreload">ObjectStorage_Abstract::reload()</a></strong> - Reloads the current object with the newly retrieved data from ObjectStorage.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodremoveContext">ObjectStorage_Abstract::removeContext()</a></strong> - Removes the ObjectStorage context if any. It reset the context back to the default ObjectStorage context.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodsetAccountMeta">ObjectStorage_Abstract::setAccountMeta()</a></strong> - Sets a meta data
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodsetBody">ObjectStorage_Abstract::setBody()</a></strong> - Sets request body
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodsetContext">ObjectStorage_Abstract::setContext()</a></strong> - Sets the ObjectStorage context. Valid context values are: cdn, search
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodsetFilter">ObjectStorage_Abstract::setFilter()</a></strong> - Sets a search filter. This method is used when you are working in &quot;search&quot; context.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodsetHeader">ObjectStorage_Abstract::setHeader()</a></strong> - Sets a request header  Use this when you need to add special request headers such as X-CDN-CNAME and so on.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodsetHeaders">ObjectStorage_Abstract::setHeaders()</a></strong> - Sets an array of ObjectStorage headers
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodsetMeta">ObjectStorage_Abstract::setMeta()</a></strong> - Sets a meta data  &quot;Meta data&quot; is an optional custom header and it is a part of the ObjectStorage response headers
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodsetMetaList">ObjectStorage_Abstract::setMetaList()</a></strong> - Sets an array of meta data
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodsetMime">ObjectStorage_Abstract::setMime()</a></strong> - Sets a ObjectStorage response format. Available values are: json, xml, text
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodsetResponse">ObjectStorage_Abstract::setResponse()</a></strong> - Sets response object
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodsetTtl">ObjectStorage_Abstract::setTtl()</a></strong> - Sets a TTL value for a container or an object
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodupdate">ObjectStorage_Abstract::update()</a></strong> - Updates a container or an object on ObjectStorage
+		</h4> 
+
+				<br />
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 14 Feb 2012 15:45:53 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
+	</div>
+</body>
+</html>

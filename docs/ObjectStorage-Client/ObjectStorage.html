@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class ObjectStorage</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class ObjectStorage
+</h2> (line <span class="linenumber">11</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_lib---ObjectStorage.php.html">/lib/ObjectStorage.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>ObjectStorage object which represents a ObjectStorage cluster.</h5>
+<ul>
+		<li><strong>copyright:</strong> - Copyright (c) 2012 SoftLayer Technologies Inc. (http://www.softlayer.com)</li>
+		<li><strong>see:</strong> - <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a></li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    static <span class="var-type">mixed</span>
+    <a href="#var$tokenStore" title="details" class="property"><strong>$tokenStore</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$httpClient" title="details" class="property"><strong>$httpClient</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$httpClientAdapterIdendifier" title="details" class="property"><strong>$httpClientAdapterIdendifier</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$httpClientAdapterTimeout" title="details" class="property"><strong>$httpClientAdapterTimeout</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$objectStorageAccountName" title="details" class="property"><strong>$objectStorageAccountName</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$objectStorageAuthData" title="details" class="property"><strong>$objectStorageAuthData</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$objectStorageHost" title="details" class="property"><strong>$objectStorageHost</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$password" title="details" class="property"><strong>$password</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$username" title="details" class="property"><strong>$username</strong></a>
+</div>
+<hr />
+<a name="var$tokenStore" id="var$tokenStore"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">static $tokenStore</strong> (line <span class="linenumber">24</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - protected</li>
+	</ul>
+</div>
+<a name="var$httpClient" id="var$httpClient"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$httpClient</strong> (line <span class="linenumber">13</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - protected</li>
+	</ul>
+</div>
+<a name="var$httpClientAdapterIdendifier" id="var$httpClientAdapterIdendifier"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$httpClientAdapterIdendifier</strong> (line <span class="linenumber">15</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - protected</li>
+	</ul>
+</div>
+<a name="var$httpClientAdapterTimeout" id="var$httpClientAdapterTimeout"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$httpClientAdapterTimeout =  10</strong> (line <span class="linenumber">14</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - protected</li>
+	</ul>
+</div>
+<a name="var$objectStorageAccountName" id="var$objectStorageAccountName"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$objectStorageAccountName</strong> (line <span class="linenumber">20</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - protected</li>
+	</ul>
+</div>
+<a name="var$objectStorageAuthData" id="var$objectStorageAuthData"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$objectStorageAuthData</strong> (line <span class="linenumber">22</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - protected</li>
+	</ul>
+</div>
+<a name="var$objectStorageHost" id="var$objectStorageHost"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$objectStorageHost</strong> (line <span class="linenumber">17</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - protected</li>
+	</ul>
+</div>
+<a name="var$password" id="var$password"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$password</strong> (line <span class="linenumber">19</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - protected</li>
+	</ul>
+</div>
+<a name="var$username" id="var$username"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$username</strong> (line <span class="linenumber">18</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - protected</li>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="const-title">
+    <a href="#constMIME_JSON" title="details" class="property"><strong>MIME_JSON</strong></a>
+</div>
+<div class="const-title">
+    <a href="#constMIME_TEXT" title="details" class="property"><strong>MIME_TEXT</strong></a>
+</div>
+<div class="const-title">
+    <a href="#constMIME_XML" title="details" class="property"><strong>MIME_XML</strong></a>
+</div>
+<hr />
+<a name="constMIME_JSON" id="constMIME_JSON"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/Constant.gif" border="0" /> <strong class="property">MIME_JSON =  'JSON'</strong> (line <span class="linenumber">26</span>)
+ </h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="constMIME_TEXT" id="constMIME_TEXT"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/Constant.gif" border="0" /> <strong class="property">MIME_TEXT =  'TEXT'</strong> (line <span class="linenumber">28</span>)
+ </h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="constMIME_XML" id="constMIME_XML"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/Constant.gif" border="0" /> <strong class="property">MIME_XML =  'XML'</strong> (line <span class="linenumber">27</span>)
+ </h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+    static         <span class="method-result">void</span>
+        <a href="#methodgetTokenStore" title="details" class="method-name">getTokenStore</a>
+        ()
+        </div>
+    <div class="method-definition">
+    static         <span class="method-result">void</span>
+        <a href="#methodsetTokenStore" title="details" class="method-name">setTokenStore</a>
+        (<span class="var-type"><a href="../ObjectStorage-Client/ObjectStorage_TokenStore_Interface.html">ObjectStorage_TokenStore_Interface</a></span>&nbsp;<span class="var-name">$tokenStore</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">ObjectStorage</span>
+        <a href="#method__construct" title="details" class="method-name">__construct</a>
+        ([<span class="var-type">string</span>&nbsp;<span class="var-name">$objectStorageHost</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$username</span> = <span class="var-default">null</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$password</span> = <span class="var-default">null</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result"><a href="../ObjectStorage-Client/ObjectStorage_Http_Response.html">ObjectStorage_Http_Response</a></span>
+        <a href="#methodauthenticate" title="details" class="method-name">authenticate</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result"><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a></span>
+        <a href="#methodcreate" title="details" class="method-name">create</a>
+        (<span class="var-type"><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a></span>&nbsp;<span class="var-name">$objectStorageObject</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methoddelete" title="details" class="method-name">delete</a>
+        (<span class="var-type"><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a></span>&nbsp;<span class="var-name">$objectStorageObject</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result"><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a></span>
+        <a href="#methodget" title="details" class="method-name">get</a>
+        (<span class="var-type"><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a></span>&nbsp;<span class="var-name">$objectStorageObject</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$retrieveBody</span> = <span class="var-default">true</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetAuthenticationCacheKey" title="details" class="method-name">getAuthenticationCacheKey</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result"><a href="../ObjectStorage-Client/ObjectStorage_AuthData.html">ObjectStorage_AuthData</a></span>
+        <a href="#methodgetAuthenticationData" title="details" class="method-name">getAuthenticationData</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetCdnUrls" title="details" class="method-name">getCdnUrls</a>
+        (<span class="var-type"><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a></span>&nbsp;<span class="var-name">$objectStorageObject</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetClusterInfo" title="details" class="method-name">getClusterInfo</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetHttpClient" title="details" class="method-name">getHttpClient</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetResponseWrapper" title="details" class="method-name">getResponseWrapper</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$path</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetUrl" title="details" class="method-name">getUrl</a>
+        (<span class="var-type"><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a></span>&nbsp;<span class="var-name">$objectStorageObject</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodisAcceptableResponse" title="details" class="method-name">isAcceptableResponse</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$responseCode</span> = <span class="var-default">0</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodparseUri" title="details" class="method-name">parseUri</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$path</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">boolean</span>
+        <a href="#methodreloadAuthenticationData" title="details" class="method-name">reloadAuthenticationData</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result"><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a></span>
+        <a href="#methodupdate" title="details" class="method-name">update</a>
+        (<span class="var-type"><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a></span>&nbsp;<span class="var-name">$objectStorageObject</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result"><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a></span>
+        <a href="#methodwith" title="details" class="method-name">with</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodgetTokenStore" id="methodgetTokenStore"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method getTokenStore</strong> (line <span class="linenumber">126</span>)
+ </h4> 
+<h4><i>void</i> <strong>getTokenStore(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methodsetTokenStore" id="methodsetTokenStore"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method setTokenStore</strong> (line <span class="linenumber">121</span>)
+ </h4> 
+<h4><i>void</i> <strong>setTokenStore(
+<a href="../ObjectStorage-Client/ObjectStorage_TokenStore_Interface.html">ObjectStorage_TokenStore_Interface</a>
+$tokenStore)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Sets the persistent ObjectStorage authentication token storage</h5>
+<div class="desc"><p><div class="src-code"><ol><li><div class="src-line">&nbsp;<font color="green">//&nbsp;ObjectStorage&nbsp;auth&nbsp;token&nbsp;can&nbsp;be&nbsp;reused&nbsp;in&nbsp;subsequent&nbsp;requests&nbsp;instead&nbsp;of&nbsp;each&nbsp;request&nbsp;attempts&nbsp;to&nbsp;authenticate&nbsp;again&nbsp;and&nbsp;again.</font></div></li>
+<li><div class="src-line">&nbsp;<strong>$tokenStore&nbsp;</strong>=&nbsp;<a href="../ObjectStorage-Client/ObjectStorage_TokenStore.html">ObjectStorage_TokenStore</a><strong>::</strong><a href="../ObjectStorage-Client/ObjectStorage_TokenStore.html#methodfactory">factory</a><strong>(</strong><font color="#66cccc">'file'</font><strong>,&nbsp;</strong>array<strong>(</strong><font color="#66cccc">'ttl'&nbsp;</font>=&gt;&nbsp;3600<strong>,&nbsp;</strong><font color="#66cccc">'path'&nbsp;</font>=&gt;&nbsp;<font color="#66cccc">'/tmp/objectStorage'</font><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;<a href="../ObjectStorage-Client/ObjectStorage.html">ObjectStorage</a><strong>::</strong><a href="../ObjectStorage-Client/ObjectStorage.html#methodsetTokenStore">setTokenStore</a><strong>(</strong><strong>$tokenStore</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;<strong>$options&nbsp;</strong>=&nbsp;array<strong>(</strong><font color="#66cccc">'adapter'&nbsp;</font>=&gt;&nbsp;<a href="../ObjectStorage-Client/ObjectStorage_Http_Client.html">ObjectStorage_Http_Client</a><strong>::</strong>CURL<strong>,&nbsp;</strong><font color="#66cccc">'timeout'&nbsp;</font>=&gt;&nbsp;10<strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;<strong>$objectStorageDallas&nbsp;</strong>=&nbsp;new&nbsp;<a href="../ObjectStorage-Client/ObjectStorage.html">ObjectStorage</a><strong>(</strong><strong>$objectStorageHost</strong><strong>,&nbsp;</strong><strong>$username</strong><strong>,&nbsp;</strong><strong>$password</strong><strong>,&nbsp;</strong><strong>$options</strong><strong>)</strong><strong>;</strong></div></li>
+</ol></div></p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../ObjectStorage-Client/ObjectStorage_TokenStore_Interface.html">ObjectStorage_TokenStore_Interface</a> $tokenStore</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="method__construct" id="method__construct"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor __construct</strong> (line <span class="linenumber">53</span>)
+ </h4> 
+<h4><i>ObjectStorage</i> <strong>__construct(
+[string
+$objectStorageHost = null], [string
+$username = null], [string
+$password = null], [array
+$options = array()])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>ObjectStorage constructor</h5>
+<div class="desc"><p>Instantiates a ObjectStorage object. All parameters are required except $options array.  With $options array, you can specify HTTP client adapter type. By default, CURL adapter will be used.</p><p>You can instantiate multiple ObjectStorage objects if you are dealing with a ObjectStorage cluster.</p><p><div class="src-code"><ol><li><div class="src-line">&nbsp;<strong>$options&nbsp;</strong>=&nbsp;array<strong>(</strong><font color="#66cccc">'adapter'&nbsp;</font>=&gt;&nbsp;<a href="../ObjectStorage-Client/ObjectStorage_Http_Client.html">ObjectStorage_Http_Client</a><strong>::</strong>CURL<strong>,&nbsp;</strong><font color="#66cccc">'timeout'&nbsp;</font>=&gt;&nbsp;10<strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;<strong>$objectStorageDallas&nbsp;</strong>=&nbsp;new&nbsp;<a href="../ObjectStorage-Client/ObjectStorage.html">ObjectStorage</a><strong>(</strong><strong>$objectStorageHost01</strong><strong>,&nbsp;</strong><strong>$username01</strong><strong>,&nbsp;</strong><strong>$password01</strong><strong>,&nbsp;</strong><strong>$options</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;<strong>$objectStorageSeattle&nbsp;</strong>=&nbsp;new&nbsp;<a href="../ObjectStorage-Client/ObjectStorage.html">ObjectStorage</a><strong>(</strong><strong>$objectStorageHost02</strong><strong>,&nbsp;</strong><strong>$username02</strong><strong>,&nbsp;</strong><strong>$password02</strong><strong>,&nbsp;</strong><strong>$options</strong><strong>)</strong><strong>;</strong></div></li>
+</ol></div></p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $objectStorageHost</strong>: </li>
+			<li><strong>string $username</strong>: </li>
+			<li><strong>string $password</strong>: </li>
+			<li><strong>array $options</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>throws</strong> - ObjectStorage_Exception_Authentication</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodauthenticate" id="methodauthenticate"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method authenticate</strong> (line <span class="linenumber">140</span>)
+ </h4> 
+<h4><i><a href="../ObjectStorage-Client/ObjectStorage_Http_Response.html">ObjectStorage_Http_Response</a></i> <strong>authenticate(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns authentication token and ObjectStorage account URL</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methodcreate" id="methodcreate"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method create</strong> (line <span class="linenumber">390</span>)
+ </h4> 
+<h4><i><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a></i> <strong>create(
+<a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a>
+$objectStorageObject)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates a ObjectStorage container or an object</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a> $objectStorageObject</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methoddelete" id="methoddelete"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method delete</strong> (line <span class="linenumber">472</span>)
+ </h4> 
+<h4><i>bool</i> <strong>delete(
+<a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a>
+$objectStorageObject)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Deletes a ObjectStorage container or an object</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a> $objectStorageObject</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodget" id="methodget"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method get</strong> (line <span class="linenumber">246</span>)
+ </h4> 
+<h4><i><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a></i> <strong>get(
+<a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a>
+$objectStorageObject, [bool
+$retrieveBody = true])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a ObjectStorage container or an object.</h5>
+<div class="desc"><p>You will less likely use this method directly from ObjectStorage object. This method is used by ObjectStorage_Abstract object.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a> $objectStorageObject</strong>: </li>
+			<li><strong>bool $retrieveBody</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodgetAuthenticationCacheKey" id="methodgetAuthenticationCacheKey"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getAuthenticationCacheKey</strong> (line <span class="linenumber">102</span>)
+ </h4> 
+<h4><i>void</i> <strong>getAuthenticationCacheKey(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methodgetAuthenticationData" id="methodgetAuthenticationData"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getAuthenticationData</strong> (line <span class="linenumber">76</span>)
+ </h4> 
+<h4><i><a href="../ObjectStorage-Client/ObjectStorage_AuthData.html">ObjectStorage_AuthData</a></i> <strong>getAuthenticationData(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns an object with ObjectStorage URL and authentication token</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodgetCdnUrls" id="methodgetCdnUrls"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getCdnUrls</strong> (line <span class="linenumber">346</span>)
+ </h4> 
+<h4><i>void</i> <strong>getCdnUrls(
+<a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a>
+$objectStorageObject)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns ObjectStorage CDN URLs.</h5>
+<div class="desc"><p>You will less likely use this method directly from ObjectStorage object. This method is used by ObjectStorage_Abstract object.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $objectStorageObject</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodgetClusterInfo" id="methodgetClusterInfo"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getClusterInfo</strong> (line <span class="linenumber">304</span>)
+ </h4> 
+<h4><i>string</i> <strong>getClusterInfo(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns ObjectStorage user list and cluster information in JSON format</h5>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - json data</li>
+			<li><strong>throws</strong> - ObjectStorage_Exception_Http</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodgetHttpClient" id="methodgetHttpClient"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getHttpClient</strong> (line <span class="linenumber">185</span>)
+ </h4> 
+<h4><i>void</i> <strong>getHttpClient(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methodgetResponseWrapper" id="methodgetResponseWrapper"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getResponseWrapper</strong> (line <span class="linenumber">210</span>)
+ </h4> 
+<h4><i>void</i> <strong>getResponseWrapper(
+
+$path)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $path</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methodgetUrl" id="methodgetUrl"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getUrl</strong> (line <span class="linenumber">333</span>)
+ </h4> 
+<h4><i>void</i> <strong>getUrl(
+<a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a>
+$objectStorageObject)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns ObjectStorage URL.</h5>
+<div class="desc"><p>You will less likely use this method directly from ObjectStorage object. This method is used by ObjectStorage_Abstract object.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $objectStorageObject</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodisAcceptableResponse" id="methodisAcceptableResponse"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method isAcceptableResponse</strong> (line <span class="linenumber">491</span>)
+ </h4> 
+<h4><i>void</i> <strong>isAcceptableResponse(
+[
+$responseCode = 0])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $responseCode</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methodparseUri" id="methodparseUri"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method parseUri</strong> (line <span class="linenumber">222</span>)
+ </h4> 
+<h4><i>void</i> <strong>parseUri(
+
+$path)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $path</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methodreloadAuthenticationData" id="methodreloadAuthenticationData"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method reloadAuthenticationData</strong> (line <span class="linenumber">168</span>)
+ </h4> 
+<h4><i>boolean</i> <strong>reloadAuthenticationData(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>ObjectStorage object stores an authentication token in a Token Store if configured.</h5>
+<div class="desc"><p>If you changed your ObjectStorage password and you need to delete the old token, use this method to remove the cached token.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodupdate" id="methodupdate"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method update</strong> (line <span class="linenumber">433</span>)
+ </h4> 
+<h4><i><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a></i> <strong>update(
+<a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a>
+$objectStorageObject)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Modifies a ObjectStorage container or an object</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a> $objectStorageObject</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodwith" id="methodwith"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method with</strong> (line <span class="linenumber">205</span>)
+ </h4> 
+<h4><i><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a></i> <strong>with(
+string
+$path)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns an instance of a ObjectStorage_Abstract sub-class which can be ObjectStorage_Container or ObjectStorage_Object.</h5>
+<div class="desc"><p>A ObjectStorage_Abstract instance returned from this method will have the link to the ObjectStorage object.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $path</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>see</strong> - <a href="../ObjectStorage-Client/ObjectStorage_Abstract.html">ObjectStorage_Abstract</a></li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 14 Feb 2012 15:45:54 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
+	</div>
+</body>
+</html>

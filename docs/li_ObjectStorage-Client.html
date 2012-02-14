@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title></title>
+  <link rel="stylesheet" href="media/stylesheet.css" />
+  <script src="media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="media/lib/tab.webfx.css" />
+<script type="text/javascript" src="media/lib/tabpane.js"></script>
+  <meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+  <script language="javascript" type="text/javascript" src="media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "media/images/plus.gif";
+	imgMinus.src = "media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff"  topmargin="3" leftmargin="3" rightmargin="2" bottommargin="3"><h3>Navigation: ObjectStorage-Client</h3>
+<script language="Javascript">
+if (document.getElementById) {
+  var tree = new WebFXTree('Help : ObjectStorage-Client', 'blank.html');
+  tree.setBehavior('classic');
+  tree.openIcon = 'media/images/Disk.gif';
+  tree.icon = 'media/images/Disk.gif';
+
+    var elements = new WebFXTreeItem('Index of elements', 'elementindex_ObjectStorage-Client.html');
+    elements.openIcon = 'media/images/file.png';
+    elements.icon = 'media/images/file.png';
+	tree.add(elements);
+
+    var tree_function = new WebFXTreeItem('Function(s)', '');
+    tree_function.openIcon = 'media/images/Functions.gif';
+    tree_function.icon = 'media/images/Functions.gif';
+    	tree.add(tree_function);
+
+	var tree_interface = new WebFXTreeItem('Interface(s)', 'classtrees_ObjectStorage-Client.html');
+    tree_interface.openIcon = 'media/images/classFolder.gif';
+    tree_interface.icon = 'media/images/classFolder.gif';
+                                                                                                                                                                                                                                                          	  var classe = new WebFXTreeItem('ObjectStorage_Http_Adapter_Interface', 'ObjectStorage-Client/ObjectStorage_Http_Adapter_Interface.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_interface.add(classe);
+                                                                                                	  var classe = new WebFXTreeItem('ObjectStorage_TokenStore_Interface', 'ObjectStorage-Client/ObjectStorage_TokenStore_Interface.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_interface.add(classe);
+                              	tree.add(tree_interface);
+	
+    var tree_classe = new WebFXTreeItem('Class(es)', 'classtrees_ObjectStorage-Client.html');
+    tree_classe.openIcon = 'media/images/classFolder.gif';
+    tree_classe.icon = 'media/images/classFolder.gif';
+          	  var classe = new WebFXTreeItem('ObjectStorage', 'ObjectStorage-Client/ObjectStorage.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Abstract', 'ObjectStorage-Client/ObjectStorage_Abstract.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_AuthData', 'ObjectStorage-Client/ObjectStorage_AuthData.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Container', 'ObjectStorage-Client/ObjectStorage_Container.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Exception', 'ObjectStorage-Client/ObjectStorage_Exception.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Exception_Authentication', 'ObjectStorage-Client/ObjectStorage_Exception_Authentication.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Exception_Container', 'ObjectStorage-Client/ObjectStorage_Exception_Container.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Exception_Http', 'ObjectStorage-Client/ObjectStorage_Exception_Http.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Exception_Http_BadGateway', 'ObjectStorage-Client/ObjectStorage_Exception_Http_BadGateway.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Exception_Http_BadRequest', 'ObjectStorage-Client/ObjectStorage_Exception_Http_BadRequest.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Exception_Http_Conflict', 'ObjectStorage-Client/ObjectStorage_Exception_Http_Conflict.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Exception_Http_Forbidden', 'ObjectStorage-Client/ObjectStorage_Exception_Http_Forbidden.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Exception_Http_InternalServerError', 'ObjectStorage-Client/ObjectStorage_Exception_Http_InternalServerError.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Exception_Http_MethodNotAllowed', 'ObjectStorage-Client/ObjectStorage_Exception_Http_MethodNotAllowed.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Exception_Http_NotAcceptable', 'ObjectStorage-Client/ObjectStorage_Exception_Http_NotAcceptable.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Exception_Http_NotFound', 'ObjectStorage-Client/ObjectStorage_Exception_Http_NotFound.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Exception_Http_NotImplemented', 'ObjectStorage-Client/ObjectStorage_Exception_Http_NotImplemented.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Exception_Http_ProxyAuthenticationRequired', 'ObjectStorage-Client/ObjectStorage_Exception_Http_ProxyAuthenticationRequired.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Exception_Http_RequestTimeout', 'ObjectStorage-Client/ObjectStorage_Exception_Http_RequestTimeout.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Exception_Http_Unauthorized', 'ObjectStorage-Client/ObjectStorage_Exception_Http_Unauthorized.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Exception_Object', 'ObjectStorage-Client/ObjectStorage_Exception_Object.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Exception_TokenStore', 'ObjectStorage-Client/ObjectStorage_Exception_TokenStore.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Http_Abstract', 'ObjectStorage-Client/ObjectStorage_Http_Abstract.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Http_Adapter_Curl', 'ObjectStorage-Client/ObjectStorage_Http_Adapter_Curl.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                          	  var classe = new WebFXTreeItem('ObjectStorage_Http_Adapter_Socket', 'ObjectStorage-Client/ObjectStorage_Http_Adapter_Socket.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Http_Adapter_Zend', 'ObjectStorage-Client/ObjectStorage_Http_Adapter_Zend.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Http_Client', 'ObjectStorage-Client/ObjectStorage_Http_Client.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Http_Request', 'ObjectStorage-Client/ObjectStorage_Http_Request.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Http_Response', 'ObjectStorage-Client/ObjectStorage_Http_Response.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Object', 'ObjectStorage-Client/ObjectStorage_Object.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_TokenStore', 'ObjectStorage-Client/ObjectStorage_TokenStore.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_TokenStore_File', 'ObjectStorage-Client/ObjectStorage_TokenStore_File.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                          	  var classe = new WebFXTreeItem('ObjectStorage_TokenStore_Memory', 'ObjectStorage-Client/ObjectStorage_TokenStore_Memory.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+                	  var classe = new WebFXTreeItem('ObjectStorage_Util', 'ObjectStorage-Client/ObjectStorage_Util.html');
+      classe.openIcon = 'media/images/Class.gif';
+      classe.icon = 'media/images/Class.gif';
+      tree_classe.add(classe);
+          	tree.add(tree_classe);
+
+    var tree_file = new WebFXTreeItem('File(s)', '');
+    tree_file.openIcon = 'media/images/FolderOpened.gif';
+    tree_file.icon = 'media/images/foldericon.png';
+    	  var file = new WebFXTreeItem('Abstract.php', 'ObjectStorage-Client/_lib---ObjectStorage---Http---Abstract.php.html');
+      file.openIcon = 'media/images/file.png';
+      file.icon = 'media/images/file.png';
+      tree_file.add(file);
+    	  var file = new WebFXTreeItem('Abstract.php', 'ObjectStorage-Client/_lib---ObjectStorage---Abstract.php.html');
+      file.openIcon = 'media/images/file.png';
+      file.icon = 'media/images/file.png';
+      tree_file.add(file);
+    	  var file = new WebFXTreeItem('AuthData.php', 'ObjectStorage-Client/_lib---ObjectStorage---AuthData.php.html');
+      file.openIcon = 'media/images/file.png';
+      file.icon = 'media/images/file.png';
+      tree_file.add(file);
+    	  var file = new WebFXTreeItem('Client.php', 'ObjectStorage-Client/_lib---ObjectStorage---Http---Client.php.html');
+      file.openIcon = 'media/images/file.png';
+      file.icon = 'media/images/file.png';
+      tree_file.add(file);
+    	  var file = new WebFXTreeItem('Container.php', 'ObjectStorage-Client/_lib---ObjectStorage---Container.php.html');
+      file.openIcon = 'media/images/file.png';
+      file.icon = 'media/images/file.png';
+      tree_file.add(file);
+    	  var file = new WebFXTreeItem('Curl.php', 'ObjectStorage-Client/_lib---ObjectStorage---Http---Adapter---Curl.php.html');
+      file.openIcon = 'media/images/file.png';
+      file.icon = 'media/images/file.png';
+      tree_file.add(file);
+    	  var file = new WebFXTreeItem('Exception.php', 'ObjectStorage-Client/_lib---ObjectStorage---Exception.php.html');
+      file.openIcon = 'media/images/file.png';
+      file.icon = 'media/images/file.png';
+      tree_file.add(file);
+    	  var file = new WebFXTreeItem('File.php', 'ObjectStorage-Client/_lib---ObjectStorage---TokenStore---File.php.html');
+      file.openIcon = 'media/images/file.png';
+      file.icon = 'media/images/file.png';
+      tree_file.add(file);
+    	  var file = new WebFXTreeItem('Interface.php', 'ObjectStorage-Client/_lib---ObjectStorage---TokenStore---Interface.php.html');
+      file.openIcon = 'media/images/file.png';
+      file.icon = 'media/images/file.png';
+      tree_file.add(file);
+    	  var file = new WebFXTreeItem('Interface.php', 'ObjectStorage-Client/_lib---ObjectStorage---Http---Adapter---Interface.php.html');
+      file.openIcon = 'media/images/file.png';
+      file.icon = 'media/images/file.png';
+      tree_file.add(file);
+    	  var file = new WebFXTreeItem('Memory.php', 'ObjectStorage-Client/_lib---ObjectStorage---TokenStore---Memory.php.html');
+      file.openIcon = 'media/images/file.png';
+      file.icon = 'media/images/file.png';
+      tree_file.add(file);
+    	  var file = new WebFXTreeItem('Object.php', 'ObjectStorage-Client/_lib---ObjectStorage---Object.php.html');
+      file.openIcon = 'media/images/file.png';
+      file.icon = 'media/images/file.png';
+      tree_file.add(file);
+    	  var file = new WebFXTreeItem('ObjectStorage.php', 'ObjectStorage-Client/_lib---ObjectStorage.php.html');
+      file.openIcon = 'media/images/file.png';
+      file.icon = 'media/images/file.png';
+      tree_file.add(file);
+    	  var file = new WebFXTreeItem('Request.php', 'ObjectStorage-Client/_lib---ObjectStorage---Http---Request.php.html');
+      file.openIcon = 'media/images/file.png';
+      file.icon = 'media/images/file.png';
+      tree_file.add(file);
+    	  var file = new WebFXTreeItem('Response.php', 'ObjectStorage-Client/_lib---ObjectStorage---Http---Response.php.html');
+      file.openIcon = 'media/images/file.png';
+      file.icon = 'media/images/file.png';
+      tree_file.add(file);
+    	  var file = new WebFXTreeItem('Socket.php', 'ObjectStorage-Client/_lib---ObjectStorage---Http---Adapter---Socket.php.html');
+      file.openIcon = 'media/images/file.png';
+      file.icon = 'media/images/file.png';
+      tree_file.add(file);
+    	  var file = new WebFXTreeItem('TokenStore.php', 'ObjectStorage-Client/_lib---ObjectStorage---TokenStore.php.html');
+      file.openIcon = 'media/images/file.png';
+      file.icon = 'media/images/file.png';
+      tree_file.add(file);
+    	  var file = new WebFXTreeItem('Util.php', 'ObjectStorage-Client/_lib---ObjectStorage---Util.php.html');
+      file.openIcon = 'media/images/file.png';
+      file.icon = 'media/images/file.png';
+      tree_file.add(file);
+    	  var file = new WebFXTreeItem('Zend.php', 'ObjectStorage-Client/_lib---ObjectStorage---Http---Adapter---Zend.php.html');
+      file.openIcon = 'media/images/file.png';
+      file.icon = 'media/images/file.png';
+      tree_file.add(file);
+    	tree.add(tree_file);
+  document.write(tree);
+}
+</script>
+<br />
+</div>
+<br />
+<span CLASS="small"><a href="http://www.phpdoc.org" target="_blank">phpDocumentor v <b>1.4.4</b></a><br />
+<br />
+<i>HTML layout inspired by </i><a href="http://www.phpedit.com" target="right">PHPEdit</a></span>
+</body>
+</html>
