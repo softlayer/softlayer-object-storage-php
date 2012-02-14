@@ -88,8 +88,8 @@ $objectStorage05->with('cdn_container/object')->loadCache();
 
 // If you want to compress *text* files served via CDN.
 $results = $objectStorage05->with('')->setContext('cdn')
-                    ->setRequestHeader('X-CDN-COMPRESSION', 'true') // Set to "false" to turn off compression
-                    ->setRequestHeader('X-CDN-COMPRESSION-MIME', 'text/plain,text/html,text/css,application/x-javascript,text/javascript')
+                    ->setHeader('X-CDN-COMPRESSION', 'true') // Set to "false" to turn off compression
+                    ->setHeader('X-CDN-COMPRESSION-MIME', 'text/plain,text/html,text/css,application/x-javascript,text/javascript')
                     ->update();
 
 // If you want to add a custom CDN CNAME. (
@@ -98,8 +98,8 @@ $results = $objectStorage05->with('')->setContext('cdn')
 // To find your CNAME endpoint, use "dig" command on your existing CDN host. For example,
 // $ dig 1234.http.dal05.cdn.softlayer.net
 $results = $objectStorage05->with('')->setContext('cdn')
-                    ->setRequestHeader('X-CDN-CNAME-Action', 'add') // Use "delete" if you wish to delete a CNAME
-                    ->setRequestHeader('X-Cdn-CNAME', 'cdn.mysite.com')
+                    ->setHeader('X-CDN-CNAME-Action', 'add') // Use "delete" if you wish to delete a CNAME
+                    ->setHeader('X-Cdn-CNAME', 'cdn.mysite.com')
                     ->update();
 
 ```
@@ -139,19 +139,22 @@ $objectOrContainer = $objectStorage05->with('')
 
 
 ## Notes
-ObjectStorage_Abstract has many properties but these three are the major componets
-* $objectStorage: holds reference to a ObjectStorage object (optional)
-* $request: HTTP request object is consisted of headers and body
-* $response: HTTP response object is consisted of headers and body
+ObjectStorage_Abstract has many properties but these three are the major componets.
+
+    * $objectStorage: holds reference to a ObjectStorage object (optional)
+    * $request: HTTP request object is consisted of headers and body
+    * $response: HTTP response object is consisted of headers and body
 
 You can access to HTTP request or response object using ObjectStorage_Abstract::getRequest or ObjectStorage_Abstract::getResponse.
 You can also use convenience getter and setters. These can help you avoid doing like this:
+
 ```php
 $container->getResponse()->setMeta('description', 'example meta');
 $container->getRequest()->getBody();
 ```
 
 But you can do this instead:
+
 ```php
 $container->setMeta('description', 'example meta');
 $container->getBody();
