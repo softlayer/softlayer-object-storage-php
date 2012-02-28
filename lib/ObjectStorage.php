@@ -304,6 +304,7 @@ class ObjectStorage
     public function getClusterInfo()
     {
         $client = $this->getHttpClient();
+        $client->setMethod('GET');
 
         list($account, $username) = explode(':', $this->username);
 
