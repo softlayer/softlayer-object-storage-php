@@ -4,7 +4,7 @@ PHP bindings for SoftLayer Object Storage
 
 
 # Install
-Unzip the files and make sure to include lib/ObjectStorage/Util.php once somewhere your script
+Unzip the files and make sure to include lib/ObjectStorage/Util.php once somewhere in your script
 
 # Requirements
     * Mandatory
@@ -49,6 +49,8 @@ $reloadedContainer = $newContainer->get();
 $result = $newContainer->delete();
 
 // Creating an object is similar to that of container CRUD
+// This library will try to guess the content-type for an object if you don't provide it.
+// An object without an extension (pseudo sub-directory) will have application/directory content-type.
 $newObject = $objectStorage->with('example_container/object.txt')
                             ->setBody('test object')
                             ->setMeta('description', 'first test file')

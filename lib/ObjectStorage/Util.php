@@ -83,9 +83,16 @@ class ObjectStorage_Util
             'zip' => 'application/zip'
         );
 
-        $extension = strtolower(array_pop(explode('.', $fileName)));
+        $chunks = explode('.', $fileName);
 
-        if (isset($mimeTypes[$extension])) {
+        $extension = '';
+        if (count($chunks) > 1) {
+            $extension = array_pop($chunks);
+        }
+
+        if ($extension == '') {
+            return 'application/directory';
+        } else if (isset($mimeTypes[$extension])) {
             return $mimeTypes[$extension];
         } else if (function_exists('mime_content_type')) {
             return mime_content_type($filename);

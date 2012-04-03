@@ -405,7 +405,7 @@ class ObjectStorage
             $client->setBody($objectStorageObject->getRequest()->getBody());
 
             if ($request->getHeader('Content-type') == '')
-                $request->setHeader('Content-type', ObjectStorage_Util::getMimeByName($objectStorageObject->getPath()));
+                $headers['Content-type'] = ObjectStorage_Util::getMimeByName($objectStorageObject->getPath());
         }
 
         if (count($headers) > 0) {
