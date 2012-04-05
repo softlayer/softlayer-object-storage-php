@@ -122,6 +122,10 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
 </div>
 <div class="var-title">
     <span class="var-type">mixed</span>
+    <a href="#var$fileHander" title="details" class="property"><strong>$fileHander</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
     <a href="#var$headers" title="details" class="property"><strong>$headers</strong></a>
 </div>
 <div class="var-title">
@@ -142,9 +146,20 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
 </div>
 <hr />
 <a name="var$body" id="var$body"><!-- --></A>
-<div style="background='#ffffff'">
+<div style="background='#eeeeee'">
 <h4>
 <img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$body</strong> (line <span class="linenumber">12</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - protected</li>
+	</ul>
+</div>
+<a name="var$fileHander" id="var$fileHander"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$fileHander =  null</strong> (line <span class="linenumber">16</span>)
  </h4>
 <h4>Data type : mixed</h4>
 <!-- ========== Info from phpDoc block ========= -->
@@ -249,6 +264,11 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
         </div>
     <div class="method-definition">
             <span class="method-result">void</span>
+        <a href="#methodsetFileHandler" title="details" class="method-name">setFileHandler</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$handler</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
         <a href="#methodsetHeaders" title="details" class="method-name">setHeaders</a>
         (<span class="var-type"></span>&nbsp;<span class="var-name">$name</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$value</span>)
         </div>
@@ -269,7 +289,7 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
 
 <a name="method__construct" id="method__construct"><!-- --></a>
 <div style="background='#ffffff'"><h4>
-<img src="../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor __construct</strong> (line <span class="linenumber">17</span>)
+<img src="../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor __construct</strong> (line <span class="linenumber">18</span>)
  </h4> 
 <h4><i>ObjectStorage_Http_Adapter_Socket</i> <strong>__construct(
 [
@@ -288,7 +308,7 @@ $options = array()])</strong></h4>
 </div>
 <a name="methodgetLastRequestHeaders" id="methodgetLastRequestHeaders"><!-- --></a>
 <div style="background='#eeeeee'"><h4>
-<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getLastRequestHeaders</strong> (line <span class="linenumber">149</span>)
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getLastRequestHeaders</strong> (line <span class="linenumber">183</span>)
  </h4> 
 <h4><i>void</i> <strong>getLastRequestHeaders(
 )</strong></h4>
@@ -308,7 +328,7 @@ $options = array()])</strong></h4>
 </div>
 <a name="methodrequest" id="methodrequest"><!-- --></a>
 <div style="background='#ffffff'"><h4>
-<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method request</strong> (line <span class="linenumber">73</span>)
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method request</strong> (line <span class="linenumber">87</span>)
  </h4> 
 <h4><i>void</i> <strong>request(
 )</strong></h4>
@@ -330,7 +350,7 @@ $options = array()])</strong></h4>
 </div>
 <a name="methodreset" id="methodreset"><!-- --></a>
 <div style="background='#eeeeee'"><h4>
-<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method reset</strong> (line <span class="linenumber">60</span>)
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method reset</strong> (line <span class="linenumber">74</span>)
  </h4> 
 <h4><i>void</i> <strong>reset(
 )</strong></h4>
@@ -352,7 +372,7 @@ $options = array()])</strong></h4>
 </div>
 <a name="methodsetBody" id="methodsetBody"><!-- --></a>
 <div style="background='#ffffff'"><h4>
-<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setBody</strong> (line <span class="linenumber">42</span>)
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setBody</strong> (line <span class="linenumber">47</span>)
  </h4> 
 <h4><i>void</i> <strong>setBody(
 
@@ -365,6 +385,7 @@ $body)</strong></h4>
 						<dd>Sets request body</dd>
 					</dl>
 		<!-- ========== Info from phpDoc block ========= -->
+<h5>(non-PHPdoc)</h5>
 		<h4>Parameters</h4>
 	<ul>
 			<li><strong> $body</strong>: </li>
@@ -372,12 +393,40 @@ $body)</strong></h4>
 		
 	<h4>Info</h4>
 	<ul>
+			<li><strong>see</strong> - <a href="../ObjectStorage-Client/ObjectStorage_Http_Adapter_Interface.html#methodsetBody">ObjectStorage_Http_Adapter_Interface::setBody()</a></li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodsetFileHandler" id="methodsetFileHandler"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setFileHandler</strong> (line <span class="linenumber">56</span>)
+ </h4> 
+<h4><i>void</i> <strong>setFileHandler(
+
+$handler)</strong></h4>
+
+			<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../ObjectStorage-Client/ObjectStorage_Http_Adapter_Interface.html#methodsetFileHandler">ObjectStorage_Http_Adapter_Interface::setFileHandler()</a></dt>
+						<dd>Returns the last request headers</dd>
+					</dl>
+		<!-- ========== Info from phpDoc block ========= -->
+<h5>(non-PHPdoc)</h5>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $handler</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>see</strong> - <a href="../ObjectStorage-Client/ObjectStorage_Http_Adapter_Interface.html#methodsetFileHandler">ObjectStorage_Http_Adapter_Interface::setFileHandler()</a></li>
 			<li><strong>access</strong> - public</li>
 		</ul>
 </div>
 <a name="methodsetHeaders" id="methodsetHeaders"><!-- --></a>
-<div style="background='#eeeeee'"><h4>
-<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setHeaders</strong> (line <span class="linenumber">37</span>)
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setHeaders</strong> (line <span class="linenumber">38</span>)
  </h4> 
 <h4><i>void</i> <strong>setHeaders(
 
@@ -405,8 +454,8 @@ $value)</strong></h4>
 		</ul>
 </div>
 <a name="methodsetMethod" id="methodsetMethod"><!-- --></a>
-<div style="background='#ffffff'"><h4>
-<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setMethod</strong> (line <span class="linenumber">51</span>)
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setMethod</strong> (line <span class="linenumber">65</span>)
  </h4> 
 <h4><i>void</i> <strong>setMethod(
 
@@ -432,8 +481,8 @@ $method)</strong></h4>
 		</ul>
 </div>
 <a name="methodsetUri" id="methodsetUri"><!-- --></a>
-<div style="background='#eeeeee'"><h4>
-<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setUri</strong> (line <span class="linenumber">28</span>)
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setUri</strong> (line <span class="linenumber">29</span>)
  </h4> 
 <h4><i>void</i> <strong>setUri(
 
@@ -484,7 +533,7 @@ setupAllTabs();
 </script>
 	<div id="credit">
 		<hr />
-		Documentation generated on Tue, 14 Feb 2012 15:45:56 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
+		Documentation generated on Thu, 05 Apr 2012 15:50:19 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
 	</div>
 </body>
 </html>

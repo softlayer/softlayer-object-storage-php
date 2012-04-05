@@ -398,15 +398,38 @@ class ObjectStorage
         $client->setMethod('PUT');
 
         $request = $objectStorageObject->getRequest();
-        $headers = $request->getHeaders();
+
 
         if ($objectStorageObject instanceof ObjectStorage_Object) {
 
-            $client->setBody($objectStorageObject->getRequest()->getBody());
+            $localFile = $objectStorageObject->getLoclFile();
 
-            if ($request->getHeader('Content-type') == '')
-                $headers['Content-type'] = ObjectStorage_Util::getMimeByName($objectStorageObject->getPath());
+            if ($localFile != '') {
+
+                if (! is_readable($localFile)) {
+                    throw new ObjectStorage_Exception('Local file ' . $localFile . ' is not readable.');
+                }
+
+                $fileHander = fopen($localFile, 'r');
+                if ($fileHander == false) {
+                    throw new ObjectStorage_Exception('Failed to open local file ' . $localFile);
+                }
+
+                $client->setFileHandler($fileHander);
+
+                // Override the content-length
+                $request->setHeader('Content-Length', filesize($localFile));
+
+            } else {
+                $client->setBody($objectStorageObject->getRequest()->getBody());
+            }
+
+            if ($request->getHeader('Content-type') == '') {
+                $request->setHeader('Content-type', ObjectStorage_Util::getMimeByName($objectStorageObject->getPath()));
+            }
         }
+
+        $headers = $request->getHeaders();
 
         if (count($headers) > 0) {
             foreach ($headers as $key => $value) {

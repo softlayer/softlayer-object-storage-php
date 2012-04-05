@@ -107,38 +107,38 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
 <h5>Abstract class for ObjectStorage_Container and ObjectStorage_Object.</h5>
 <div class="desc"><p>ObjectStorage_Abstract class represents a ObjectStorage container or an object.  With this class, you can easily create/retrieve/update/delete ObjectStorage containers and objects.</p><p>ObjectStorage_Abstract has many properties but these three are the major componets</p><p>* $objectStorage: holds reference to a ObjectStorage object (optional)  * $request: HTTP request object is consisted of headers and body  * $response: HTTP response object is consisted of headers and body</p><p>CRUD operation of a container  <div class="src-code"><ol><li><div class="src-line">&nbsp;<strong>$objectStorageDallas&nbsp;</strong>=&nbsp;new&nbsp;<a href="../ObjectStorage-Client/ObjectStorage.html">ObjectStorage</a><strong>(</strong><strong>$objectStorageHost</strong><strong>,&nbsp;</strong><strong>$username</strong><strong>,&nbsp;</strong><strong>$password</strong><strong>,&nbsp;</strong><strong>$options</strong><strong>)</strong><strong>;</strong></div></li>
 <li><div class="src-line">&nbsp;</div></li>
-<li><div class="src-line">&nbsp;<strong>$newContainer&nbsp;</strong>=&nbsp;<strong>$objectStorageDallas</strong><strong>-&gt;</strong>with<strong>(</strong><font color="#66cccc">'example_container'</font><strong>)</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodcreate">create</a><strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;<strong>$newContainer&nbsp;</strong>=&nbsp;<strong>$objectStorageDallas</strong><strong>-&gt;</strong>with<strong>(</strong><font color="#66cccc">'example_container'</font><strong>)</strong><strong>-&gt;</strong>create<strong>(</strong><strong>)</strong><strong>;</strong></div></li>
 <li><div class="src-line">&nbsp;</div></li>
-<li><div class="src-line">&nbsp;<strong>$updatedContainer&nbsp;</strong>=&nbsp;<strong>$newContainer</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodsetMeta">setMeta</a><strong>(</strong><font color="#66cccc">'Description'</font><strong>,&nbsp;</strong><font color="#66cccc">'Adding&nbsp;a&nbsp;meta&nbsp;data'</font><strong>)</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodupdate">update</a><strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;<strong>$updatedContainer&nbsp;</strong>=&nbsp;<strong>$newContainer</strong><strong>-&gt;</strong>setMeta<strong>(</strong><font color="#66cccc">'Description'</font><strong>,&nbsp;</strong><font color="#66cccc">'Adding&nbsp;a&nbsp;meta&nbsp;data'</font><strong>)</strong><strong>-&gt;</strong>update<strong>(</strong><strong>)</strong><strong>;</strong></div></li>
 <li><div class="src-line">&nbsp;</div></li>
-<li><div class="src-line">&nbsp;<strong>$reloadedContainer&nbsp;</strong>=&nbsp;<strong>$newContainer</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodget">get</a><strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;<strong>$reloadedContainer&nbsp;</strong>=&nbsp;<strong>$newContainer</strong><strong>-&gt;</strong>get<strong>(</strong><strong>)</strong><strong>;</strong></div></li>
 <li><div class="src-line">&nbsp;</div></li>
-<li><div class="src-line">&nbsp;<strong>$result&nbsp;</strong>=&nbsp;<strong>$newContainer</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methoddelete">delete</a><strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;<strong>$result&nbsp;</strong>=&nbsp;<strong>$newContainer</strong><strong>-&gt;</strong>delete<strong>(</strong><strong>)</strong><strong>;</strong></div></li>
 <li><div class="src-line">&nbsp;</div></li>
 <li><div class="src-line">&nbsp;<font color="green">//&nbsp;If&nbsp;you&nbsp;wanted,&nbsp;you&nbsp;can&nbsp;do&nbsp;this&nbsp;all&nbsp;one&nbsp;line.</font></div></li>
 <li><div class="src-line">&nbsp;<font color="green">//&nbsp;Most&nbsp;functions&nbsp;return&nbsp;itself&nbsp;so&nbsp;you&nbsp;can&nbsp;chain&nbsp;method&nbsp;calls&nbsp;except&nbsp;detele&nbsp;method&nbsp;which&nbsp;returns&nbsp;a&nbsp;boolean&nbsp;value.</font></div></li>
-<li><div class="src-line">&nbsp;<strong>$result&nbsp;</strong>=&nbsp;<strong>$objectStorageDallas05</strong><strong>-&gt;</strong>with<strong>(</strong><font color="#66cccc">'example_container'</font><strong>)</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodcreate">create</a><strong>(</strong><strong>)</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodsetMeta">setMeta</a><strong>(</strong><font color="#66cccc">'Description'</font><strong>,&nbsp;</strong><font color="#66cccc">'Adding&nbsp;a&nbsp;meta&nbsp;data'</font><strong>)</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodupdate">update</a><strong>(</strong><strong>)</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodget">get</a><strong>(</strong><strong>)</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methoddelete">delete</a><strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;<strong>$result&nbsp;</strong>=&nbsp;<strong>$objectStorageDallas05</strong><strong>-&gt;</strong>with<strong>(</strong><font color="#66cccc">'example_container'</font><strong>)</strong><strong>-&gt;</strong>create<strong>(</strong><strong>)</strong><strong>-&gt;</strong>setMeta<strong>(</strong><font color="#66cccc">'Description'</font><strong>,&nbsp;</strong><font color="#66cccc">'Adding&nbsp;a&nbsp;meta&nbsp;data'</font><strong>)</strong><strong>-&gt;</strong>update<strong>(</strong><strong>)</strong><strong>-&gt;</strong>get<strong>(</strong><strong>)</strong><strong>-&gt;</strong>delete<strong>(</strong><strong>)</strong><strong>;</strong></div></li>
 <li><div class="src-line">&nbsp;</div></li>
 <li><div class="src-line">&nbsp;<font color="green">//&nbsp;When&nbsp;you&nbsp;create&nbsp;a&nbsp;new&nbsp;container&nbsp;or&nbsp;an&nbsp;object,&nbsp;ObjectStorage_Abstract&nbsp;will&nbsp;return&nbsp;itself,&nbsp;not&nbsp;the&nbsp;newly&nbsp;created&nbsp;conainer&nbsp;or&nbsp;object.</font></div></li>
 <li><div class="src-line">&nbsp;<font color="green">//&nbsp;If&nbsp;you&nbsp;wish&nbsp;to&nbsp;reload&nbsp;the&nbsp;the&nbsp;data&nbsp;from&nbsp;ObjectStorage&nbsp;cluster,&nbsp;use&nbsp;ObjectStorage_Abstract::get&nbsp;or&nbsp;ObjectStorage_Abstract::reload&nbsp;methods.</font></div></li>
-<li><div class="src-line">&nbsp;<strong>$newContainer&nbsp;</strong>=&nbsp;<strong>$objectStorageDallas</strong><strong>-&gt;</strong>with<strong>(</strong><font color="#66cccc">'example_container'</font><strong>)</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodcreate">create</a><strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;<strong>$newContainer&nbsp;</strong>=&nbsp;<strong>$objectStorageDallas</strong><strong>-&gt;</strong>with<strong>(</strong><font color="#66cccc">'example_container'</font><strong>)</strong><strong>-&gt;</strong>create<strong>(</strong><strong>)</strong><strong>;</strong></div></li>
 <li><div class="src-line">&nbsp;</div></li>
 <li><div class="src-line">&nbsp;<font color="green">//&nbsp;It&nbsp;will&nbsp;fetch&nbsp;the&nbsp;container&nbsp;info&nbsp;from&nbsp;ObjectStorage&nbsp;and&nbsp;reload&nbsp;$newContainer&nbsp;object&nbsp;with&nbsp;it.</font></div></li>
-<li><div class="src-line">&nbsp;<strong>$newContainer</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodreload">reload</a><strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;<strong>$newContainer</strong><strong>-&gt;</strong>reload<strong>(</strong><strong>)</strong><strong>;</strong></div></li>
 </ol></div></p><p>ObjectStorage_Abstract tries to postpone the actual interaction with ObjectStorage as late as it can.  Authentication to ObjectStorage or any CRUD operation happens when you invoke these method:  * create  * get  * getInfo (Equivalent to HEAD request)  * update  * delete  * getCdnUrls  * purgeCache (only applicable to a ObjectStorage_Object in a public container)  * loadCache (only applicable to a ObjectStorage_Object in a public container)</p><p>In order to make objects available via CDN, you will need to make a container public. See the example below:  <div class="src-code"><ol><li><div class="src-line">&nbsp;<font color="green">//&nbsp;To&nbsp;create&nbsp;a&nbsp;CDN&nbsp;enabled&nbsp;container</font></div></li>
-<li><div class="src-line">&nbsp;<strong>$objectStorageDallas</strong><strong>-&gt;</strong>with<strong>(</strong><font color="#66cccc">'cdn_container'</font><strong>)</strong><strong>-&gt;</strong>enableCdn<strong>(</strong><strong>)</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodcreate">create</a><strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;<strong>$objectStorageDallas</strong><strong>-&gt;</strong>with<strong>(</strong><font color="#66cccc">'cdn_container'</font><strong>)</strong><strong>-&gt;</strong>enableCdn<strong>(</strong><strong>)</strong><strong>-&gt;</strong>create<strong>(</strong><strong>)</strong><strong>;</strong></div></li>
 <li><div class="src-line">&nbsp;</div></li>
 <li><div class="src-line">&nbsp;<font color="green">//&nbsp;To&nbsp;update&nbsp;an&nbsp;existing&nbsp;container&nbsp;to&nbsp;a&nbsp;CDN&nbsp;enabled&nbsp;container</font></div></li>
-<li><div class="src-line">&nbsp;<strong>$objectStorageDallas</strong><strong>-&gt;</strong>with<strong>(</strong><font color="#66cccc">'another_container'</font><strong>)</strong><strong>-&gt;</strong>enableCdn<strong>(</strong><strong>)</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodupdate">update</a><strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;<strong>$objectStorageDallas</strong><strong>-&gt;</strong>with<strong>(</strong><font color="#66cccc">'another_container'</font><strong>)</strong><strong>-&gt;</strong>enableCdn<strong>(</strong><strong>)</strong><strong>-&gt;</strong>update<strong>(</strong><strong>)</strong><strong>;</strong></div></li>
 <li><div class="src-line">&nbsp;</div></li>
 <li><div class="src-line">&nbsp;<font color="green">//&nbsp;Likewise,&nbsp;you&nbsp;can&nbsp;change&nbsp;a&nbsp;container&nbsp;private&nbsp;this&nbsp;way.</font></div></li>
-<li><div class="src-line">&nbsp;<strong>$objectStorageDallas</strong><strong>-&gt;</strong>with<strong>(</strong><font color="#66cccc">'another_container'</font><strong>)</strong><strong>-&gt;</strong>disableCdn<strong>(</strong><strong>)</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodupdate">update</a><strong>(</strong><strong>)</strong><strong>;</strong></div></li>
-</ol></div></p><p>You can iterate through container or object using $containers or $objects property  <div class="src-code"><ol><li><div class="src-line">&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><a href="http://www.php.net/count">count</a><strong>(</strong><strong>$container</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#var$objects">objects</a><strong>)&nbsp;</strong>&gt;&nbsp;0<strong>)&nbsp;</strong><strong>{</strong></div></li>
-<li><div class="src-line">&nbsp;&nbsp;&nbsp;<font color="blue">foreach&nbsp;</font><strong>(</strong><strong>$results</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#var$objects">objects</a>&nbsp;as&nbsp;<strong>$shallowObject</strong><strong>)&nbsp;</strong><strong>{</strong></div></li>
-<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$object&nbsp;</strong>=&nbsp;<strong>$shallowObject</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodget">get</a><strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;<strong>$objectStorageDallas</strong><strong>-&gt;</strong>with<strong>(</strong><font color="#66cccc">'another_container'</font><strong>)</strong><strong>-&gt;</strong>disableCdn<strong>(</strong><strong>)</strong><strong>-&gt;</strong>update<strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+</ol></div></p><p>You can iterate through container or object using $containers or $objects property  <div class="src-code"><ol><li><div class="src-line">&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><a href="http://www.php.net/count">count</a><strong>(</strong><strong>$container</strong><strong>-&gt;</strong>objects<strong>)&nbsp;</strong>&gt;&nbsp;0<strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;<font color="blue">foreach&nbsp;</font><strong>(</strong><strong>$results</strong><strong>-&gt;</strong>objects&nbsp;as&nbsp;<strong>$shallowObject</strong><strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$object&nbsp;</strong>=&nbsp;<strong>$shallowObject</strong><strong>-&gt;</strong>get<strong>(</strong><strong>)</strong><strong>;</strong></div></li>
 <li><div class="src-line">&nbsp;</div></li>
-<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<strong>$object</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetUrl">getUrl</a><strong>(</strong><strong>)</strong><strong>;</strong></div></li>
-<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<strong>$object</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetResponse">getResponse</a><strong>(</strong><strong>)</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetBody">getBody</a><strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<strong>$object</strong><strong>-&gt;</strong>getUrl<strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<strong>$object</strong><strong>-&gt;</strong>getResponse<strong>(</strong><strong>)</strong><strong>-&gt;</strong>getBody<strong>(</strong><strong>)</strong><strong>;</strong></div></li>
 <li><div class="src-line">&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
 <li><div class="src-line">&nbsp;<strong>}</strong></div></li>
 <li><div class="src-line">&nbsp;</div></li>
@@ -147,8 +147,8 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
 <li><div class="src-line">&nbsp;<strong>$objectStorageDallas&nbsp;</strong>=&nbsp;new&nbsp;<a href="../ObjectStorage-Client/ObjectStorage.html">ObjectStorage</a><strong>(</strong><strong>$objectStorageHost01</strong><strong>,&nbsp;</strong><strong>$username01</strong><strong>,&nbsp;</strong><strong>$password01</strong><strong>,&nbsp;</strong><strong>$options</strong><strong>)</strong><strong>;</strong></div></li>
 <li><div class="src-line">&nbsp;<strong>$objectStorageSeattle&nbsp;</strong>=&nbsp;new&nbsp;<a href="../ObjectStorage-Client/ObjectStorage.html">ObjectStorage</a><strong>(</strong><strong>$objectStorageHost02</strong><strong>,&nbsp;</strong><strong>$username02</strong><strong>,&nbsp;</strong><strong>$password02</strong><strong>,&nbsp;</strong><strong>$options</strong><strong>)</strong><strong>;</strong></div></li>
 <li><div class="src-line">&nbsp;</div></li>
-<li><div class="src-line">&nbsp;<strong>$object&nbsp;</strong>=&nbsp;<strong>$objectStorageDallas</strong><strong>-&gt;</strong>with<strong>(</strong><font color="#66cccc">'path/object'</font><strong>)</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodget">get</a><strong>(</strong><strong>)</strong><strong>;</strong></div></li>
-<li><div class="src-line">&nbsp;<strong>$objectStorageSeattle</strong><strong>-&gt;</strong><a href="../ObjectStorage-Client/ObjectStorage_Abstract.html#methodcreate">create</a><strong>(</strong><strong>$object</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;<strong>$object&nbsp;</strong>=&nbsp;<strong>$objectStorageDallas</strong><strong>-&gt;</strong>with<strong>(</strong><font color="#66cccc">'path/object'</font><strong>)</strong><strong>-&gt;</strong>get<strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;<strong>$objectStorageSeattle</strong><strong>-&gt;</strong>create<strong>(</strong><strong>$object</strong><strong>)</strong><strong>;</strong></div></li>
 </ol></div></p></div>
 <ul>
 		<li><strong>copyright:</strong> - Copyright (c) 2012 SoftLayer Technologies Inc. (http://www.softlayer.com)</li>
@@ -157,12 +157,12 @@ tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
 <br /><hr />
 <span class="type">Classes extended from ObjectStorage_Abstract:</span>
  		<dl>
-	<dt><a href="../ObjectStorage-Client/ObjectStorage_Object.html">ObjectStorage_Object</a></dt>
-		<dd>This class represents a ObjectStorage object.</dd>
-	</dl>
-		<dl>
 	<dt><a href="../ObjectStorage-Client/ObjectStorage_Container.html">ObjectStorage_Container</a></dt>
 		<dd>This class represents a ObjectStorage container.</dd>
+	</dl>
+		<dl>
+	<dt><a href="../ObjectStorage-Client/ObjectStorage_Object.html">ObjectStorage_Object</a></dt>
+		<dd>This class represents a ObjectStorage object.</dd>
 	</dl>
 	</p>
 </div>
@@ -1181,11 +1181,11 @@ $ttlValue = 3600])</strong></h4>
 )</strong></h4>
 	<p>Overridden in child classes as:<br />
 		<dl>
-	<dt><a href="../ObjectStorage-Client/ObjectStorage_Object.html#methodupdate">ObjectStorage_Object::update()</a></dt>
+	<dt><a href="../ObjectStorage-Client/ObjectStorage_Container.html#methodupdate">ObjectStorage_Container::update()</a></dt>
 		<dd>(non-PHPdoc)</dd>
 	</dl>
 		<dl>
-	<dt><a href="../ObjectStorage-Client/ObjectStorage_Container.html#methodupdate">ObjectStorage_Container::update()</a></dt>
+	<dt><a href="../ObjectStorage-Client/ObjectStorage_Object.html#methodupdate">ObjectStorage_Object::update()</a></dt>
 		<dd>(non-PHPdoc)</dd>
 	</dl>
 	</p>
@@ -1225,7 +1225,7 @@ setupAllTabs();
 </script>
 	<div id="credit">
 		<hr />
-		Documentation generated on Tue, 14 Feb 2012 15:45:39 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
+		Documentation generated on Thu, 05 Apr 2012 15:50:01 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
 	</div>
 </body>
 </html>

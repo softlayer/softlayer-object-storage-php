@@ -13,6 +13,7 @@ class ObjectStorage_Http_Adapter_Socket implements ObjectStorage_Http_Adapter_In
     protected $method;
     protected $timeout = 30;
     protected $requestHeaders = array();
+    protected $fileHander = null;
 
     public function __construct($options = array())
     {
@@ -39,9 +40,22 @@ class ObjectStorage_Http_Adapter_Socket implements ObjectStorage_Http_Adapter_In
         $this->headers[$name] = $name . ': ' . $value;
     }
 
+    /**
+     * (non-PHPdoc)
+     * @see ObjectStorage_Http_Adapter_Interface::setBody()
+     */
     public function setBody($body)
     {
         $this->body = $body;
+    }
+
+    /**
+     * (non-PHPdoc)
+     * @see ObjectStorage_Http_Adapter_Interface::setFileHandler()
+     */
+    public function setFileHandler($handler)
+    {
+        $this->fileHander = $handler;
     }
 
     /**
@@ -103,11 +117,31 @@ class ObjectStorage_Http_Adapter_Socket implements ObjectStorage_Http_Adapter_In
 
         $requestData = implode($lineBreak, $this->requestHeaders) . $doubleLineBreaks;
 
-        if ($this->body != '') {
-            $requestData .= $this->body;
-        }
-
         fputs($socket, $requestData);
+
+        if (in_array($this->method, array('PUT', 'POST'))) {
+            if (is_resource($this->fileHander)) {
+
+                $fseek = 0; // Used for debugging purposes
+                $readSize = 1024;
+
+                while (! feof($this->fileHander)) {
+
+                    $contents = fread($this->fileHander, $readSize);
+
+                    if (@fwrite($socket, $contents) === false) {
+                        throw new ObjectStorage_Exception('Failed to write data to socket when writing about ' . $fseek . ' bytes.');
+                    }
+
+                    $fseek += $readSize;
+                }
+
+                fclose($this->fileHander);
+
+            } else if ($this->body != '') {
+                fputs($socket, $this->body);
+            }
+        }
 
         while(!feof($socket)) {
             $responseData .= fgets($socket, 128);

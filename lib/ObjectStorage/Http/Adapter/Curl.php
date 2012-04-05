@@ -13,6 +13,7 @@ class ObjectStorage_Http_Adapter_Curl implements ObjectStorage_Http_Adapter_Inte
     protected $method;
     protected $timeout = 30;
     protected $requestHeaders = array();
+    protected $fileHander = null;
 
     public function __construct($options = array())
     {
@@ -60,6 +61,15 @@ class ObjectStorage_Http_Adapter_Curl implements ObjectStorage_Http_Adapter_Inte
 
     /**
      * (non-PHPdoc)
+     * @see ObjectStorage_Http_Adapter_Interface::setFileHandler()
+     */
+    public function setFileHandler($handler)
+    {
+        $this->fileHander = $handler;
+    }
+
+    /**
+     * (non-PHPdoc)
      * @see ObjectStorage_Http_Adapter_Interface::setMethod()
      */
     public function setMethod($method)
@@ -97,7 +107,7 @@ class ObjectStorage_Http_Adapter_Curl implements ObjectStorage_Http_Adapter_Inte
         $this->requestHeaders = array_merge($requiredHeaders, $this->headers);
 
         // To get around CURL issue. http://curl.haxx.se/mail/lib-2010-08/0171.html
-        $headers = implode("\r\n", $this->requestHeaders);
+        $requestHeaders = implode("\r\n", $this->requestHeaders);
 
         curl_setopt($curl, CURLOPT_HEADER, true);
         curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
@@ -105,7 +115,7 @@ class ObjectStorage_Http_Adapter_Curl implements ObjectStorage_Http_Adapter_Inte
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_URL, $this->uri);
         curl_setopt($curl, CURLOPT_TIMEOUT, $this->timeout);
-        curl_setopt($curl, CURLOPT_HTTPHEADER, array($headers));
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array($requestHeaders));
 
         $method = strtoupper($this->method);
         switch($method) {
@@ -123,17 +133,26 @@ class ObjectStorage_Http_Adapter_Curl implements ObjectStorage_Http_Adapter_Inte
                 break;
         }
 
-        if (in_array($method, array('PUT', 'POST')) && $this->body != '') {
-            $filePointer = fopen('php://temp/maxmemory:256000', 'w');
-            if (! $filePointer) {
-                throw new ObjectStorage_Exception('could not open temp memory data');
-            }
-            fwrite($filePointer, $this->body);
-            fseek($filePointer, 0);
+        if (in_array($method, array('PUT', 'POST'))) {
 
-            curl_setopt($curl, CURLOPT_BINARYTRANSFER, true);
-            curl_setopt($curl, CURLOPT_INFILE, $filePointer);
-            curl_setopt($curl, CURLOPT_INFILESIZE, strlen($this->body));
+            if ($this->fileHander != null) {
+
+                curl_setopt($curl, CURLOPT_BINARYTRANSFER, true);
+                curl_setopt($curl, CURLOPT_INFILE, $this->fileHander);
+                curl_setopt($curl, CURLOPT_READFUNCTION, array(&$this, 'readFileCallback'));
+
+            } else if ($this->body != '') {
+                $filePointer = fopen('php://temp/maxmemory:256000', 'w');
+                if (! $filePointer) {
+                    throw new ObjectStorage_Exception('could not open temp memory data');
+                }
+                fwrite($filePointer, $this->body);
+                fseek($filePointer, 0);
+
+                curl_setopt($curl, CURLOPT_BINARYTRANSFER, true);
+                curl_setopt($curl, CURLOPT_INFILE, $filePointer);
+                curl_setopt($curl, CURLOPT_INFILESIZE, strlen($this->body));
+            }
         }
 
         $rawResponse = curl_exec($curl);
@@ -176,5 +195,13 @@ class ObjectStorage_Http_Adapter_Curl implements ObjectStorage_Http_Adapter_Inte
     public function getLastRequestHeaders()
     {
         return $this->requestHeaders;
+    }
+
+    protected function readFileCallback($curl, $fileHandler, $length = 1000)
+    {
+        $data = fread($fileHandler, $length);
+        $len = strlen($data);
+
+        return $data;
     }
 }

@@ -9,6 +9,8 @@ class ObjectTest extends BaseTest
     protected static $newObjectMeta = null;
     protected static $metaKey = null;
     protected static $wackyObjectName = null;
+    protected static $copiedFileName = null;
+    protected static $localFileName = null;
 
 
     public static function setUpBeforeClass()
@@ -27,6 +29,9 @@ class ObjectTest extends BaseTest
         self::$metaKey = 'Description';
         self::$newObjectMeta = 'META DATA TO TEST';
         self::$newObjectBody = 'This is a test file created by PHPUnit test. It should be removed shortly. If not, something\'s gone wrong.';
+
+        self::$copiedFileName = self::$newContainerName . '/copied-file.dummy';
+        self::$localFileName = '/tmp/object-storage-' . time() . '.dummy.file';
     }
 
     public function testCreate()
@@ -42,7 +47,7 @@ class ObjectTest extends BaseTest
             $this->assertInstanceOf('ObjectStorage_Abstract', $object, 'Failed to create new object: ' . $name);
         }
 
-        sleep(10);
+        sleep(1);
     }
 
     public function testGet()
@@ -61,6 +66,28 @@ class ObjectTest extends BaseTest
         }
     }
 
+    public function testCreateFromFile()
+    {
+        $result = @file_put_contents(self::$localFileName, str_repeat(rand(0,9), 1024*1024));
+        sleep(1);
+
+        if ($result == false) {
+            echo 'WARN: failed to create a temporary file for upload test. Path: ' . self::$localFileName . "\n";
+        } else {
+            $object = self::$objectStorage->with(self::$copiedFileName)
+                        ->setLocalFile(self::$localFileName)
+                        ->create();
+
+            $this->assertInstanceOf('ObjectStorage_Abstract', $object, 'Failed to create new object: ' . $name);
+        }
+
+        $copiedObject = self::$objectStorage->with(self::$copiedFileName)->getInfo();
+
+        $fileSize = filesize(self::$localFileName);
+        $this->assertEquals($copiedObject->getHeader('content-length'), $fileSize, 'Copied object size (' . $copiedObject->getHeader('content-length') . ') and the local file size (' . $fileSize. ') do not match.');
+
+    }
+
     public function testDelete()
     {
         foreach (self::$newObjectNames as $name) {
@@ -68,8 +95,12 @@ class ObjectTest extends BaseTest
             $this->assertTrue($result, 'Failed to delete ' . $name);
         }
 
+        self::$objectStorage->with(self::$copiedFileName)->delete();
+
         $result = self::$objectStorage->with(self::$newContainerName)->delete();
 
         $this->assertTrue($result, 'Failed to delete the test container ' . self::$newContainerName);
+
+        @unlink(self::$localFileName);
     }
 }

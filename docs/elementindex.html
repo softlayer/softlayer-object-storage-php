@@ -234,10 +234,6 @@
     <td width="100%" align="left" valign="top">in file Container.php, method <a href="ObjectStorage-Client/ObjectStorage_Container.html#methodenableCdn">ObjectStorage_Container::enableCdn()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Enables CDN. This method sets a &quot;public read&quot; meta data.</td>
   </tr>
     <tr>
-    <td>&nbsp;&nbsp;&nbsp;<strong>example.php</strong></td>
-    <td width="100%" align="left" valign="top">procedural page <a href="php-objectstorage/_lib---example.php.html">example.php</a></td>
-  </tr>
-    <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>Exception.php</strong></td>
     <td width="100%" align="left" valign="top">procedural page <a href="ObjectStorage-Client/_lib---ObjectStorage---Exception.php.html">Exception.php</a></td>
   </tr>
@@ -251,12 +247,20 @@
 </thead>
 <tbody>
     <tr>
-    <td>&nbsp;&nbsp;&nbsp;<strong>factory</strong></td>
-    <td width="100%" align="left" valign="top">in file TokenStore.php, method <a href="ObjectStorage-Client/ObjectStorage_TokenStore.html#methodfactory">ObjectStorage_TokenStore::factory()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Returns a Token Store object</td>
+    <td>&nbsp;&nbsp;&nbsp;<strong>$fileHander</strong></td>
+    <td width="100%" align="left" valign="top">in file Curl.php, variable <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Curl.html#var$fileHander">ObjectStorage_Http_Adapter_Curl::$fileHander</a></td>
+  </tr>
+    <tr>
+    <td>&nbsp;&nbsp;&nbsp;<strong>$fileHander</strong></td>
+    <td width="100%" align="left" valign="top">in file Socket.php, variable <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Socket.html#var$fileHander">ObjectStorage_Http_Adapter_Socket::$fileHander</a></td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>factory</strong></td>
     <td width="100%" align="left" valign="top">in file Client.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Client.html#methodfactory">ObjectStorage_Http_Client::factory()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Returns an instance that implements ObjectStorage_Http_Adapter_Interface</td>
+  </tr>
+    <tr>
+    <td>&nbsp;&nbsp;&nbsp;<strong>factory</strong></td>
+    <td width="100%" align="left" valign="top">in file TokenStore.php, method <a href="ObjectStorage-Client/ObjectStorage_TokenStore.html#methodfactory">ObjectStorage_TokenStore::factory()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Returns a Token Store object</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>Forbidden.php</strong></td>
@@ -277,15 +281,7 @@
 <tbody>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>get</strong></td>
-    <td width="100%" align="left" valign="top">in file Interface.php, method <a href="ObjectStorage-Client/ObjectStorage_TokenStore_Interface.html#methodget">ObjectStorage_TokenStore_Interface::get()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Returns a cached value</td>
-  </tr>
-    <tr>
-    <td>&nbsp;&nbsp;&nbsp;<strong>get</strong></td>
     <td width="100%" align="left" valign="top">in file Memory.php, method <a href="ObjectStorage-Client/ObjectStorage_TokenStore_Memory.html#methodget">ObjectStorage_TokenStore_Memory::get()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
-  </tr>
-    <tr>
-    <td>&nbsp;&nbsp;&nbsp;<strong>get</strong></td>
-    <td width="100%" align="left" valign="top">in file ObjectStorage.php, method <a href="ObjectStorage-Client/ObjectStorage.html#methodget">ObjectStorage::get()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Returns a ObjectStorage container or an object.</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>get</strong></td>
@@ -293,11 +289,19 @@
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>get</strong></td>
+    <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Abstract.html#methodget">ObjectStorage_Abstract::get()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Retrieves the container or object data from ObjectStorage  $limit and $marker will not be taken into consideration when dealing with an object.</td>
+  </tr>
+    <tr>
+    <td>&nbsp;&nbsp;&nbsp;<strong>get</strong></td>
     <td width="100%" align="left" valign="top">in file Container.php, method <a href="ObjectStorage-Client/ObjectStorage_Container.html#methodget">ObjectStorage_Container::get()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>get</strong></td>
-    <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Abstract.html#methodget">ObjectStorage_Abstract::get()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Retrieves the container or object data from ObjectStorage  $limit and $marker will not be taken into consideration when dealing with an object.</td>
+    <td width="100%" align="left" valign="top">in file Interface.php, method <a href="ObjectStorage-Client/ObjectStorage_TokenStore_Interface.html#methodget">ObjectStorage_TokenStore_Interface::get()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Returns a cached value</td>
+  </tr>
+    <tr>
+    <td>&nbsp;&nbsp;&nbsp;<strong>get</strong></td>
+    <td width="100%" align="left" valign="top">in file ObjectStorage.php, method <a href="ObjectStorage-Client/ObjectStorage.html#methodget">ObjectStorage::get()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Returns a ObjectStorage container or an object.</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>getAuthenticationCacheKey</strong></td>
@@ -309,11 +313,11 @@
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>getBody</strong></td>
-    <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Abstract.html#methodgetBody">ObjectStorage_Http_Abstract::getBody()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Returns HTTP body</td>
+    <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetBody">ObjectStorage_Abstract::getBody()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Gets body data from response object</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>getBody</strong></td>
-    <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetBody">ObjectStorage_Abstract::getBody()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Gets body data from response object</td>
+    <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Abstract.html#methodgetBody">ObjectStorage_Http_Abstract::getBody()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Returns HTTP body</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>getCdnUrls</strong></td>
@@ -337,19 +341,19 @@
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>getHeader</strong></td>
-    <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Abstract.html#methodgetHeader">ObjectStorage_Http_Abstract::getHeader()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Returns header by key</td>
-  </tr>
-    <tr>
-    <td>&nbsp;&nbsp;&nbsp;<strong>getHeader</strong></td>
     <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetHeader">ObjectStorage_Abstract::getHeader()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Gets a response header by key</td>
   </tr>
     <tr>
-    <td>&nbsp;&nbsp;&nbsp;<strong>getHeaders</strong></td>
-    <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Abstract.html#methodgetHeaders">ObjectStorage_Http_Abstract::getHeaders()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Returns header array</td>
+    <td>&nbsp;&nbsp;&nbsp;<strong>getHeader</strong></td>
+    <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Abstract.html#methodgetHeader">ObjectStorage_Http_Abstract::getHeader()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Returns header by key</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>getHeaders</strong></td>
     <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Abstract.html#methodgetHeaders">ObjectStorage_Abstract::getHeaders()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Gets an array of response headers</td>
+  </tr>
+    <tr>
+    <td>&nbsp;&nbsp;&nbsp;<strong>getHeaders</strong></td>
+    <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Abstract.html#methodgetHeaders">ObjectStorage_Http_Abstract::getHeaders()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Returns header array</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>getHttpClient</strong></td>
@@ -361,11 +365,11 @@
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>getLastRequestHeaders</strong></td>
-    <td width="100%" align="left" valign="top">in file Socket.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Socket.html#methodgetLastRequestHeaders">ObjectStorage_Http_Adapter_Socket::getLastRequestHeaders()</a></td>
+    <td width="100%" align="left" valign="top">in file Interface.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Interface.html#methodgetLastRequestHeaders">ObjectStorage_Http_Adapter_Interface::getLastRequestHeaders()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Returns the last request headers</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>getLastRequestHeaders</strong></td>
-    <td width="100%" align="left" valign="top">in file Interface.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Interface.html#methodgetLastRequestHeaders">ObjectStorage_Http_Adapter_Interface::getLastRequestHeaders()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Returns the last request headers</td>
+    <td width="100%" align="left" valign="top">in file Socket.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Socket.html#methodgetLastRequestHeaders">ObjectStorage_Http_Adapter_Socket::getLastRequestHeaders()</a></td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>getLastRequestHeaders</strong></td>
@@ -374,6 +378,10 @@
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>getLastRequestHeaders</strong></td>
     <td width="100%" align="left" valign="top">in file Zend.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Zend.html#methodgetLastRequestHeaders">ObjectStorage_Http_Adapter_Zend::getLastRequestHeaders()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
+  </tr>
+    <tr>
+    <td>&nbsp;&nbsp;&nbsp;<strong>getLoclFile</strong></td>
+    <td width="100%" align="left" valign="top">in file Object.php, method <a href="ObjectStorage-Client/ObjectStorage_Object.html#methodgetLoclFile">ObjectStorage_Object::getLoclFile()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Returns the path to a local file that you will be used as object content  If you a local file is set, it will proceed the body data set by setBody() method.</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>getMeta</strong></td>
@@ -517,6 +525,10 @@
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>$limit</strong></td>
     <td width="100%" align="left" valign="top">in file Abstract.php, variable <a href="ObjectStorage-Client/ObjectStorage_Abstract.html#var$limit">ObjectStorage_Abstract::$limit</a></td>
+  </tr>
+    <tr>
+    <td>&nbsp;&nbsp;&nbsp;<strong>$localFile</strong></td>
+    <td width="100%" align="left" valign="top">in file Object.php, variable <a href="ObjectStorage-Client/ObjectStorage_Object.html#var$localFile">ObjectStorage_Object::$localFile</a></td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>loadCache</strong></td>
@@ -852,6 +864,10 @@
     <td width="100%" align="left" valign="top">procedural page <a href="ObjectStorage-Client/_lib---ObjectStorage---Http---Response.php.html">Response.php</a></td>
   </tr>
     <tr>
+    <td>&nbsp;&nbsp;&nbsp;<strong>readFileCallback</strong></td>
+    <td width="100%" align="left" valign="top">in file Curl.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Curl.html#methodreadFileCallback">ObjectStorage_Http_Adapter_Curl::readFileCallback()</a></td>
+  </tr>
+    <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>reload</strong></td>
     <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Abstract.html#methodreload">ObjectStorage_Abstract::reload()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Reloads the current object with the newly retrieved data from ObjectStorage.</td>
   </tr>
@@ -869,10 +885,6 @@
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>request</strong></td>
-    <td width="100%" align="left" valign="top">in file Curl.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Curl.html#methodrequest">ObjectStorage_Http_Adapter_Curl::request()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
-  </tr>
-    <tr>
-    <td>&nbsp;&nbsp;&nbsp;<strong>request</strong></td>
     <td width="100%" align="left" valign="top">in file Socket.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Socket.html#methodrequest">ObjectStorage_Http_Adapter_Socket::request()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
   </tr>
     <tr>
@@ -880,8 +892,16 @@
     <td width="100%" align="left" valign="top">in file Interface.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Interface.html#methodrequest">ObjectStorage_Http_Adapter_Interface::request()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Performs a HTTP request and returns ObjectStorage_Http_Response object</td>
   </tr>
     <tr>
+    <td>&nbsp;&nbsp;&nbsp;<strong>request</strong></td>
+    <td width="100%" align="left" valign="top">in file Curl.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Curl.html#methodrequest">ObjectStorage_Http_Adapter_Curl::request()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
+  </tr>
+    <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>reset</strong></td>
     <td width="100%" align="left" valign="top">in file Zend.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Zend.html#methodreset">ObjectStorage_Http_Adapter_Zend::reset()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
+  </tr>
+    <tr>
+    <td>&nbsp;&nbsp;&nbsp;<strong>reset</strong></td>
+    <td width="100%" align="left" valign="top">in file Interface.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Interface.html#methodreset">ObjectStorage_Http_Adapter_Interface::reset()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Initialize request headers, body and method.</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>reset</strong></td>
@@ -890,10 +910,6 @@
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>reset</strong></td>
     <td width="100%" align="left" valign="top">in file Socket.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Socket.html#methodreset">ObjectStorage_Http_Adapter_Socket::reset()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
-  </tr>
-    <tr>
-    <td>&nbsp;&nbsp;&nbsp;<strong>reset</strong></td>
-    <td width="100%" align="left" valign="top">in file Interface.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Interface.html#methodreset">ObjectStorage_Http_Adapter_Interface::reset()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Initialize request headers, body and method.</td>
   </tr>
   </tbody>
 <thead>
@@ -910,11 +926,11 @@
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>$skipOverwriteHeaders</strong></td>
-    <td width="100%" align="left" valign="top">in file Object.php, variable <a href="ObjectStorage-Client/ObjectStorage_Object.html#var$skipOverwriteHeaders">ObjectStorage_Object::$skipOverwriteHeaders</a></td>
+    <td width="100%" align="left" valign="top">in file Container.php, variable <a href="ObjectStorage-Client/ObjectStorage_Container.html#var$skipOverwriteHeaders">ObjectStorage_Container::$skipOverwriteHeaders</a></td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>$skipOverwriteHeaders</strong></td>
-    <td width="100%" align="left" valign="top">in file Container.php, variable <a href="ObjectStorage-Client/ObjectStorage_Container.html#var$skipOverwriteHeaders">ObjectStorage_Container::$skipOverwriteHeaders</a></td>
+    <td width="100%" align="left" valign="top">in file Object.php, variable <a href="ObjectStorage-Client/ObjectStorage_Object.html#var$skipOverwriteHeaders">ObjectStorage_Object::$skipOverwriteHeaders</a></td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>$statusCode</strong></td>
@@ -926,11 +942,11 @@
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>set</strong></td>
-    <td width="100%" align="left" valign="top">in file File.php, method <a href="ObjectStorage-Client/ObjectStorage_TokenStore_File.html#methodset">ObjectStorage_TokenStore_File::set()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
+    <td width="100%" align="left" valign="top">in file Interface.php, method <a href="ObjectStorage-Client/ObjectStorage_TokenStore_Interface.html#methodset">ObjectStorage_TokenStore_Interface::set()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Sets a value</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>set</strong></td>
-    <td width="100%" align="left" valign="top">in file Interface.php, method <a href="ObjectStorage-Client/ObjectStorage_TokenStore_Interface.html#methodset">ObjectStorage_TokenStore_Interface::set()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Sets a value</td>
+    <td width="100%" align="left" valign="top">in file File.php, method <a href="ObjectStorage-Client/ObjectStorage_TokenStore_File.html#methodset">ObjectStorage_TokenStore_File::set()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>set</strong></td>
@@ -942,15 +958,15 @@
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>setBody</strong></td>
-    <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Abstract.html#methodsetBody">ObjectStorage_Http_Abstract::setBody()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Sets HTTP body</td>
-  </tr>
-    <tr>
-    <td>&nbsp;&nbsp;&nbsp;<strong>setBody</strong></td>
     <td width="100%" align="left" valign="top">in file Curl.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Curl.html#methodsetBody">ObjectStorage_Http_Adapter_Curl::setBody()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>setBody</strong></td>
     <td width="100%" align="left" valign="top">in file Zend.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Zend.html#methodsetBody">ObjectStorage_Http_Adapter_Zend::setBody()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
+  </tr>
+    <tr>
+    <td>&nbsp;&nbsp;&nbsp;<strong>setBody</strong></td>
+    <td width="100%" align="left" valign="top">in file Socket.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Socket.html#methodsetBody">ObjectStorage_Http_Adapter_Socket::setBody()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>setBody</strong></td>
@@ -962,7 +978,7 @@
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>setBody</strong></td>
-    <td width="100%" align="left" valign="top">in file Socket.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Socket.html#methodsetBody">ObjectStorage_Http_Adapter_Socket::setBody()</a></td>
+    <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Abstract.html#methodsetBody">ObjectStorage_Http_Abstract::setBody()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Sets HTTP body</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>setContext</strong></td>
@@ -973,20 +989,32 @@
     <td width="100%" align="left" valign="top">in file Exception.php, method <a href="ObjectStorage-Client/ObjectStorage_Exception.html#methodsetFile">ObjectStorage_Exception::setFile()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Sets the file name of which an exception is thrown</td>
   </tr>
     <tr>
-    <td>&nbsp;&nbsp;&nbsp;<strong>setFilter</strong></td>
-    <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Abstract.html#methodsetFilter">ObjectStorage_Abstract::setFilter()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Sets a search filter. This method is used when you are working in &quot;search&quot; context.</td>
+    <td>&nbsp;&nbsp;&nbsp;<strong>setFileHandler</strong></td>
+    <td width="100%" align="left" valign="top">in file Interface.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Interface.html#methodsetFileHandler">ObjectStorage_Http_Adapter_Interface::setFileHandler()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Returns the last request headers</td>
   </tr>
     <tr>
-    <td>&nbsp;&nbsp;&nbsp;<strong>setHeader</strong></td>
-    <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Abstract.html#methodsetHeader">ObjectStorage_Abstract::setHeader()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Sets a request header  Use this when you need to add special request headers such as X-CDN-CNAME and so on.</td>
+    <td>&nbsp;&nbsp;&nbsp;<strong>setFileHandler</strong></td>
+    <td width="100%" align="left" valign="top">in file Socket.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Socket.html#methodsetFileHandler">ObjectStorage_Http_Adapter_Socket::setFileHandler()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
+  </tr>
+    <tr>
+    <td>&nbsp;&nbsp;&nbsp;<strong>setFileHandler</strong></td>
+    <td width="100%" align="left" valign="top">in file Curl.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Curl.html#methodsetFileHandler">ObjectStorage_Http_Adapter_Curl::setFileHandler()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
+  </tr>
+    <tr>
+    <td>&nbsp;&nbsp;&nbsp;<strong>setFileHandler</strong></td>
+    <td width="100%" align="left" valign="top">in file Zend.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Zend.html#methodsetFileHandler">ObjectStorage_Http_Adapter_Zend::setFileHandler()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
+  </tr>
+    <tr>
+    <td>&nbsp;&nbsp;&nbsp;<strong>setFilter</strong></td>
+    <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Abstract.html#methodsetFilter">ObjectStorage_Abstract::setFilter()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Sets a search filter. This method is used when you are working in &quot;search&quot; context.</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>setHeader</strong></td>
     <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Abstract.html#methodsetHeader">ObjectStorage_Http_Abstract::setHeader()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Sets header</td>
   </tr>
     <tr>
-    <td>&nbsp;&nbsp;&nbsp;<strong>setHeaders</strong></td>
-    <td width="100%" align="left" valign="top">in file Interface.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Interface.html#methodsetHeaders">ObjectStorage_Http_Adapter_Interface::setHeaders()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Sets request header</td>
+    <td>&nbsp;&nbsp;&nbsp;<strong>setHeader</strong></td>
+    <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Abstract.html#methodsetHeader">ObjectStorage_Abstract::setHeader()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Sets a request header  Use this when you need to add special request headers such as X-CDN-CNAME and so on.</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>setHeaders</strong></td>
@@ -994,11 +1022,15 @@
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>setHeaders</strong></td>
-    <td width="100%" align="left" valign="top">in file Socket.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Socket.html#methodsetHeaders">ObjectStorage_Http_Adapter_Socket::setHeaders()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
+    <td width="100%" align="left" valign="top">in file Interface.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Interface.html#methodsetHeaders">ObjectStorage_Http_Adapter_Interface::setHeaders()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Sets request header</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>setHeaders</strong></td>
-    <td width="100%" align="left" valign="top">in file Curl.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Curl.html#methodsetHeaders">ObjectStorage_Http_Adapter_Curl::setHeaders()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
+    <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Abstract.html#methodsetHeaders">ObjectStorage_Abstract::setHeaders()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Sets an array of ObjectStorage headers</td>
+  </tr>
+    <tr>
+    <td>&nbsp;&nbsp;&nbsp;<strong>setHeaders</strong></td>
+    <td width="100%" align="left" valign="top">in file Socket.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Socket.html#methodsetHeaders">ObjectStorage_Http_Adapter_Socket::setHeaders()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>setHeaders</strong></td>
@@ -1006,11 +1038,15 @@
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>setHeaders</strong></td>
-    <td width="100%" align="left" valign="top">in file Abstract.php, method <a href="ObjectStorage-Client/ObjectStorage_Abstract.html#methodsetHeaders">ObjectStorage_Abstract::setHeaders()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Sets an array of ObjectStorage headers</td>
+    <td width="100%" align="left" valign="top">in file Curl.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Curl.html#methodsetHeaders">ObjectStorage_Http_Adapter_Curl::setHeaders()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>setLine</strong></td>
     <td width="100%" align="left" valign="top">in file Exception.php, method <a href="ObjectStorage-Client/ObjectStorage_Exception.html#methodsetLine">ObjectStorage_Exception::setLine()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Sets the line number of which an exception is thrown</td>
+  </tr>
+    <tr>
+    <td>&nbsp;&nbsp;&nbsp;<strong>setLocalFile</strong></td>
+    <td width="100%" align="left" valign="top">in file Object.php, method <a href="ObjectStorage-Client/ObjectStorage_Object.html#methodsetLocalFile">ObjectStorage_Object::setLocalFile()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Sets a local file that will be used as object body  If you set the local file, it will proceed the body data set by setBody() method.</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>setMeta</strong></td>
@@ -1022,19 +1058,19 @@
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>setMethod</strong></td>
-    <td width="100%" align="left" valign="top">in file Interface.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Interface.html#methodsetMethod">ObjectStorage_Http_Adapter_Interface::setMethod()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Sets request method such as GET, PUT, POST, DELETE or HEAD</td>
-  </tr>
-    <tr>
-    <td>&nbsp;&nbsp;&nbsp;<strong>setMethod</strong></td>
-    <td width="100%" align="left" valign="top">in file Socket.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Socket.html#methodsetMethod">ObjectStorage_Http_Adapter_Socket::setMethod()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
-  </tr>
-    <tr>
-    <td>&nbsp;&nbsp;&nbsp;<strong>setMethod</strong></td>
     <td width="100%" align="left" valign="top">in file Curl.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Curl.html#methodsetMethod">ObjectStorage_Http_Adapter_Curl::setMethod()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>setMethod</strong></td>
     <td width="100%" align="left" valign="top">in file Zend.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Zend.html#methodsetMethod">ObjectStorage_Http_Adapter_Zend::setMethod()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
+  </tr>
+    <tr>
+    <td>&nbsp;&nbsp;&nbsp;<strong>setMethod</strong></td>
+    <td width="100%" align="left" valign="top">in file Interface.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Interface.html#methodsetMethod">ObjectStorage_Http_Adapter_Interface::setMethod()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;Sets request method such as GET, PUT, POST, DELETE or HEAD</td>
+  </tr>
+    <tr>
+    <td>&nbsp;&nbsp;&nbsp;<strong>setMethod</strong></td>
+    <td width="100%" align="left" valign="top">in file Socket.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Socket.html#methodsetMethod">ObjectStorage_Http_Adapter_Socket::setMethod()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>setMime</strong></td>
@@ -1058,11 +1094,7 @@
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>setUri</strong></td>
-    <td width="100%" align="left" valign="top">in file Zend.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Zend.html#methodsetUri">ObjectStorage_Http_Adapter_Zend::setUri()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
-  </tr>
-    <tr>
-    <td>&nbsp;&nbsp;&nbsp;<strong>setUri</strong></td>
-    <td width="100%" align="left" valign="top">in file Interface.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Interface.html#methodsetUri">ObjectStorage_Http_Adapter_Interface::setUri()</a></td>
+    <td width="100%" align="left" valign="top">in file Curl.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Curl.html#methodsetUri">ObjectStorage_Http_Adapter_Curl::setUri()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>setUri</strong></td>
@@ -1070,7 +1102,11 @@
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>setUri</strong></td>
-    <td width="100%" align="left" valign="top">in file Curl.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Curl.html#methodsetUri">ObjectStorage_Http_Adapter_Curl::setUri()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
+    <td width="100%" align="left" valign="top">in file Interface.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Interface.html#methodsetUri">ObjectStorage_Http_Adapter_Interface::setUri()</a></td>
+  </tr>
+    <tr>
+    <td>&nbsp;&nbsp;&nbsp;<strong>setUri</strong></td>
+    <td width="100%" align="left" valign="top">in file Zend.php, method <a href="ObjectStorage-Client/ObjectStorage_Http_Adapter_Zend.html#methodsetUri">ObjectStorage_Http_Adapter_Zend::setUri()</a><br>&nbsp;&nbsp;&nbsp;&nbsp;(non-PHPdoc)</td>
   </tr>
     <tr>
     <td>&nbsp;&nbsp;&nbsp;<strong>SOCKET</strong></td>

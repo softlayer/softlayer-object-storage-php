@@ -12,6 +12,8 @@ Interface ObjectStorage_Http_Adapter_Interface
     /*
      * Sets URI. URI is typically a ObjectStorage URI
      *
+     * @param string $uri
+     *
      * @return void
      */
     public function setUri($uri);
@@ -64,4 +66,13 @@ Interface ObjectStorage_Http_Adapter_Interface
      * @return array
      */
     public function getLastRequestHeaders();
+
+    /**
+     * Returns the last request headers
+     *
+     * @param resource $handler
+     *
+     * @return void
+     */
+    public function setFileHandler($handler);
 }

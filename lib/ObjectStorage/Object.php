@@ -9,6 +9,8 @@
  */
 class ObjectStorage_Object extends ObjectStorage_Abstract
 {
+    protected $localFile = '';
+
     public static $skipOverwriteHeaders = array('ETAG', 'ACCEPT-RANGES', 'LAST-MODIFIED', 'DATE', 'CONNECTION', 'CONTENT-LENGTH');
 
     protected function getMetaPrefix()
@@ -87,5 +89,30 @@ class ObjectStorage_Object extends ObjectStorage_Abstract
             $this->objectStorage->update($this);
         }
         return true;
+    }
+
+    /**
+     * Returns the path to a local file that you will be used as object content
+     * If you a local file is set, it will proceed the body data set by setBody() method.
+     *
+     * @return string
+     */
+    public function getLoclFile()
+    {
+        return $this->localFile;
+    }
+
+    /**
+     * Sets a local file that will be used as object body
+     * If you set the local file, it will proceed the body data set by setBody() method.
+     *
+     * @param string $path
+     *
+     * @return ObjectStorage_Abstract
+     */
+    public function setLocalFile($path)
+    {
+        $this->localFile = $path;
+        return $this;
     }
 }

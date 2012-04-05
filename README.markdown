@@ -56,6 +56,14 @@ $newObject = $objectStorage->with('example_container/object.txt')
                             ->setMeta('description', 'first test file')
                             ->create();
 
+// You can copy a local file to Object Storage.
+// This will stream local file data to Object Storage. Keep in mind, most PHP configurations will support a file size up to 2 GB.
+$newObject = $objectStorage->with('example_container/large_file.zip')
+                            ->setLocalfile('/path/to/local/file')
+                            ->setMeta('description', 'large local file upload')
+                            ->setHeader('Content-type', 'application/zip')
+                            ->create();
+
 // If you wanted, you can do this all one line.
 // Most functions return itself so you can chain method calls except delete method which returns a boolean value.
 $result = $objectStorage->with('example_container')

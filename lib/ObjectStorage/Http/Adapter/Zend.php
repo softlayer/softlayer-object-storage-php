@@ -52,6 +52,20 @@ class ObjectStorage_Http_Adapter_Zend implements ObjectStorage_Http_Adapter_Inte
 
     /**
      * (non-PHPdoc)
+     * @see ObjectStorage_Http_Adapter_Interface::setFileHandler()
+     */
+    public function setFileHandler($handler)
+    {
+        $requiredVersion = '1.10';
+
+        if (Zend_Version::compareVersion($requiredVersion) >= 1) {
+            throw new ObjectStorage_Exception('Zend HTTP clien\'s data streaming upload requires Zend framework version ' . $requiredVersion . ' or greater.');
+        }
+        $this->client->setRawData($handler);
+    }
+
+    /**
+     * (non-PHPdoc)
      * @see ObjectStorage_Http_Adapter_Interface::setMethod()
      */
     public function setMethod($method)
