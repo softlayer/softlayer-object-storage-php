@@ -118,7 +118,7 @@ $results = $objectStorage05->with('')->setContext('cdn')
 ```php
 $container = $objectStorage->with('another_container')->get();
 if (count($container->objects) > 0) {
-    foreach ($results->objects as $shallowObject) {
+    foreach ($container->objects as $shallowObject) {
         $object = $shallowObject->get();
 
         echo $object->getUrl();
