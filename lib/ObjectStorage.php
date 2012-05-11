@@ -61,10 +61,13 @@ class ObjectStorage
         $this->password = $password;
 
         if (isset($options['adapter']) && ObjectStorage_Http_Client::validateAdapter($options['adapter'])) {
-            $this->httpClientAdapterTimeout    = $options['timeout'];
             $this->httpClientAdapterIdendifier = $options['adapter'];
         } else {
             $this->httpClientAdapterIdendifier = ObjectStorage_Http_Client::CURL;
+        }
+
+        if (isset($options['timeout'])) {
+            $this->httpClientAdapterTimeout    = $options['timeout'];
         }
     }
 

@@ -42,27 +42,26 @@ class ObjectStorage_Http_Client
      */
     public static function factory($adapter = ObjectStorage_Http_Client::CURL, $options = array())
     {
-        if (! isset(self::$client[$host])) {
+        if (! isset(self::$client[$adapter])) {
             switch ($adapter) {
                 case ObjectStorage_Http_Client::ZEND:
-                    self::$client[$host] = new ObjectStorage_Http_Adapter_Zend($options);
+                    self::$client[$adapter] = new ObjectStorage_Http_Adapter_Zend($options);
                     break;
                 case ObjectStorage_Http_Client::SOCKET:
-                    self::$client[$host] = new ObjectStorage_Http_Adapter_Socket($options);
+                    self::$client[$adapter] = new ObjectStorage_Http_Adapter_Socket($options);
                     break;
                 case ObjectStorage_Http_Client::CURL:
-                    self::$client[$host] = new ObjectStorage_Http_Adapter_Curl($options);
+                    self::$client[$adapter] = new ObjectStorage_Http_Adapter_Curl($options);
                     break;
                 default:
-                    self::$client[$host] = new ObjectStorage_Http_Adapter_Curl();
                     throw new ObjectStorage_Exception('Invalid HTTP client type.');
             }
         }
 
-        if (! self::$client[$host] instanceof ObjectStorage_Http_Adapter_Interface) {
+        if (! self::$client[$adapter] instanceof ObjectStorage_Http_Adapter_Interface) {
             throw new ObjectStorage_Exception('HTTP client must implement ObjectStorage_Http_Client_Interface.');
         }
 
-        return self::$client[$host];
+        return self::$client[$adapter];
     }
 }
