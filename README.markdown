@@ -56,7 +56,10 @@ $result = $newContainer->delete();
 // Creating an object is similar to that of container CRUD
 // This library will try to guess the content-type for an object if you don't provide it.
 // An object without an extension (pseudo sub-directory) will have application/directory content-type.
-$newObject = $objectStorage->with('example_container/object.txt')
+// you should create sub directory first, then you could upload files to sub directory.
+$objectStorage->with('example_container/level1_dir')->create();
+$objectStorage->with('example_container/level1_dir/level2_dir')->create();
+$newObject = $objectStorage->with('example_container/level1_dir/level2_dir/object.txt')
                             ->setBody('test object')
                             ->setMeta('description', 'first test file')
                             ->create();
