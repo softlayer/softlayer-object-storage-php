@@ -9,6 +9,7 @@ Unzip the files and make sure to include lib/ObjectStorage/Util.php once somewhe
 # Requirements
     * Mandatory
         * PHP version > 5.2
+		* PHP OpenSSL extension (if your PHP is compiled by your self, make sure compile it with: --with-openssl configure)
     * Optional
         * Zend Framework (for HTTP Client)
         * CURL
@@ -32,6 +33,10 @@ ObjectStorage::setTokenStore($tokenStore);
 
 // If no adapter option is provided, CURL will be used.
 $options = array('adapter' => ObjectStorage_Http_Client::SOCKET, 'timeout' => 10);
+ $host = 'https://dal05.objectstorage.softlayer.net'; // the SoftLayer Object Storage API host
+ $username = 'SLOS778231112-1:3241234'; // user name and password is display at https://manage.softlayer.com/ObjectStorage/index
+ $password = 'ksd83ksd8ksdfhx823ks8cksew8slsdi82ls8xlsd8l';
+
 $objectStorage = new ObjectStorage($host, $username, $password, $options);
 ```
 
