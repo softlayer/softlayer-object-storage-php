@@ -107,7 +107,7 @@ class ObjectStorage_Http_Adapter_Socket implements ObjectStorage_Http_Adapter_In
         $requestData = $responseData = '';
 
 
-        $this->requestHeaders[] = $this->method . ' ' . $urlInfo['path'] . ' HTTP/1.1';
+        $this->requestHeaders[] = $this->method . ' ' . $urlInfo['path'] . (isset($urlInfo['query']) ? '?' . $urlInfo['query'] : '') . ' HTTP/1.1';
         $this->requestHeaders[] = 'Host: ' . $urlInfo['host'];
         $this->requestHeaders[] = 'Connection: Close';
 

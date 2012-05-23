@@ -97,7 +97,7 @@ class ObjectStorage_Object extends ObjectStorage_Abstract
      *
      * @return string
      */
-    public function getLoclFile()
+    public function getLocalFile()
     {
         return $this->localFile;
     }

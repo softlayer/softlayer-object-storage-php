@@ -2,8 +2,6 @@
 /**
  * Interface for ObjectStorage REST client adpater class
  *
- * @see ObjectStorage_TokenStore
- *
  * @package ObjectStorage-Client
  * @copyright  Copyright (c) 2012 SoftLayer Technologies Inc. (http://www.softlayer.com)
  */

@@ -263,6 +263,12 @@ class ObjectStorage
             $queryParams[] = 'marker=' . urlencode($objectStorageObject->marker);
         }
 
+        if (count($objectStorageObject->queryString) > 0) {
+            foreach ($objectStorageObject->queryString as $key => $value) {
+                $queryParams[] = $key . '=' . urlencode($value);
+            }
+        }
+
         if ($objectStorageObject->limit) {
             $queryParams[] = 'limit=' . urlencode($objectStorageObject->limit);
         }

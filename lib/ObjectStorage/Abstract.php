@@ -89,6 +89,7 @@ abstract class ObjectStorage_Abstract
     public $limit = 0;
     public $marker = '';
     public $searchFilters = array();
+    public $queryString = array();
 
     protected $path;
     protected $mime;
@@ -389,6 +390,22 @@ abstract class ObjectStorage_Abstract
     }
 
     /**
+     * Sets a query parameter. This method is used to set a URL parameter.
+     *
+     * @param string $key
+     * @param string $value
+     *
+     * @return ObjectStorage_Abstract
+     */
+    public function setParam($key, $value)
+    {
+        // @todo Validate $key
+        $this->queryString[$key] = (string) $value;
+
+        return $this;
+    }
+
+    /**
      * Returns the ObjectStorage context value
      *
      * @return string
@@ -443,8 +460,13 @@ abstract class ObjectStorage_Abstract
         }
 
         if (count($this->searchFilters) > 0) {
-            $filters = array();
             foreach ($this->searchFilters as $key => $value) {
+                $queryString[] = $key . '=' . $value;
+            }
+        }
+
+        if (count($this->queryString) > 0) {
+            foreach ($this->queryString as $key => $value) {
                 $queryString[] = $key . '=' . $value;
             }
         }
