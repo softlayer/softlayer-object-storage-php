@@ -132,6 +132,29 @@ if (count($container->objects) > 0) {
 }
 ```
 
+## Pseudo-hierarchical directories
+```php
+/** 
+ * If you have a container and an object as below and you want to retrieve pseudo sub-directories,
+ * use the "prefix" and "delimiter" query parameters.
+ *
+ * - some_container/sub_dir/2012/object.file
+ */
+
+$container = $objectStorage01->with('some_container')
+                ->setParam('delimiter', '/')
+                ->setParam('prefix', '')
+                ->setMime('json')
+                ->get();
+
+// Response body (json) will include {"subdir":"sub_dir/"}
+// You can traverse to the final object by setting the "subdir" value as the new "prefix" value.
+// To retrieve the next level pseudo directory:
+...
+            ->setParam('prefix', 'sub_dir/');
+...
+```
+
 ## Copy an object to another Object Storage
 
 ```php
