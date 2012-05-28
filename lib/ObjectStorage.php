@@ -411,7 +411,7 @@ class ObjectStorage
 
         if ($objectStorageObject instanceof ObjectStorage_Object) {
 
-            $localFile = $objectStorageObject->getLoclFile();
+            $localFile = $objectStorageObject->getLocalFile();
 
             if ($localFile != '') {
 
