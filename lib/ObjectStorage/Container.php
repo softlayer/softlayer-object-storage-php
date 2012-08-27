@@ -80,7 +80,7 @@ class ObjectStorage_Container extends ObjectStorage_Abstract
                         if ($this->context == ObjectStorage_Abstract::CONTEXT_SEARCH) {
                             $path = $object->type == 'container' ? $object->container : $object->container . '/' . $object->name;
                         } else {
-                            $path = $this->path . '/' . $object->name;
+                            $path = $this->path . '/' . (isset($object->name) ? $object->name : (isset($object->subdir) ? $object->subdir : ''));
                         }
                         $this->appendData($this->objectStorage->with($path));
                     }

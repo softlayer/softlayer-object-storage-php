@@ -506,10 +506,21 @@ class ObjectStorage
     {
         $authData = $this->getAuthenticationData();
 
+        $uri = $authData->objectStorageUrl . '/' . rawurlencode($objectStorageObject->getPath());
+
+        $queryParams = array();
+        if (count($objectStorageObject->queryString) > 0) {
+            foreach ($objectStorageObject->queryString as $key => $value) {
+                $queryParams[] = $key . '=' . urlencode($value);
+            }
+
+            $uri .= '?' . implode('&', $queryParams);
+        }
+
         $client = $this->getHttpClient();
         $client->setHeaders('X-Auth-Token', $authData->authToken);
         $client->setMethod('DELETE');
-        $client->setUri($authData->objectStorageUrl . '/' . rawurlencode(ltrim($objectStorageObject->getPath(), '/')));
+        $client->setUri($uri);
 
         $response = $client->request();
 
