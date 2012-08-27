@@ -426,7 +426,7 @@ abstract class ObjectStorage_Abstract
         $name = strtoupper($name);
         if (in_array($name, array(self::CONTEXT_CDN, self::CONTEXT_SEARCH))) {
             $this->context = $name;
-            $this->setHeader('X-Context', $name);
+            $this->setHeader('X-Context', strtolower($name));
         }
 
         return $this;
