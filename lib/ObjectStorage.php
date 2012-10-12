@@ -368,7 +368,7 @@ class ObjectStorage
             $client->setHeaders('X-Auth-Token', $authData->authToken);
             $client->setHeaders('X-Context', 'cdn');
             $client->setMethod('HEAD');
-            $client->setUri($authData->objectStorageUrl . '/' . ltrim($objectStorageObject->getPath(), '/'));
+            $client->setUri($authData->objectStorageUrl . '/' . rawurlencode(ltrim($objectStorageObject->getPath(), '/')));
 
             $response = $client->request();
 
