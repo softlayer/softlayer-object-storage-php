@@ -64,7 +64,7 @@ $newObject = $objectStorage->with('example_container/object.txt')
 // You can copy a local file to Object Storage.
 // This will stream local file data to Object Storage. Keep in mind, most PHP configurations will support a file size up to 2 GB.
 $newObject = $objectStorage->with('example_container/large_file.zip')
-                            ->setLocalfile('/path/to/local/file')
+                            ->setLocalFile('/path/to/local/file')
                             ->setMeta('description', 'large local file upload')
                             ->setHeader('Content-type', 'application/zip')
                             ->create();
@@ -134,7 +134,7 @@ if (count($container->objects) > 0) {
 
 ## Pseudo-hierarchical directories
 ```php
-/** 
+/**
  * If you have a container and an object as below and you want to retrieve pseudo sub-directories,
  * use the "prefix" and "delimiter" query parameters.
  *
