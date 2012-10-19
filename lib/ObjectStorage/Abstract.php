@@ -276,6 +276,19 @@ abstract class ObjectStorage_Abstract
     {
         return $this->response->getBody();
     }
+    
+    /**
+     * Sets a location to copy from for an object
+     *
+     * @param string $location
+     *
+     * @return ObjectStorage_Abstract
+     */
+    public function copyFrom($location)
+    {
+        $this->setHeader('X-Copy-From', $location);
+        return $this;
+    }
 
     /**
      * Return ObjectStorage_Http_Request object
