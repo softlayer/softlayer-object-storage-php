@@ -69,6 +69,12 @@ $newObject = $objectStorage->with('example_container/large_file.zip')
                             ->setHeader('Content-type', 'application/zip')
                             ->create();
 
+// You can copy a remote file in Objst Storage.
+// This will trigger a remote copy on the cluster (which is significantly faster than streaming down and up the file/headers).
+$newObject = $objectStorage->with('example_container/large_file_duplicate.zip')
+                            ->copyFrom('/example_container/large_file.zip')
+                            ->create();
+
 // If you wanted, you can do this all one line.
 // Most functions return itself so you can chain method calls except delete method which returns a boolean value.
 $result = $objectStorage->with('example_container')
