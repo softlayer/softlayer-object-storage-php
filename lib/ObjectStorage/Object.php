@@ -115,4 +115,32 @@ class ObjectStorage_Object extends ObjectStorage_Abstract
         $this->localFile = $path;
         return $this;
     }
+
+    /**
+     * Sets a deletion timestamp for an object
+     * Send an $epochTimestamp of "null" to remove the attribute
+     *
+     * @param int $epochTimestamp
+     *
+     * @return ObjectStorage_Abstract
+     */
+    public function deleteAt($epochTimestamp)
+    {
+        $this->request->setRawHeader('X-delete-at', $epochTimestamp);
+        return $this;
+    }
+    
+    /**
+     * Sets the number of seconds to wait before deleting an object
+     * (This is converted into an 'X-Delete-At' header in the container
+     *
+     * @param int $seconds
+     *
+     * @return ObjectStorage_Abstract
+     */
+    public function deleteAfter($seconds)
+    {
+        $this->request->setRawHeader('X-delete-after', $seconds);
+        return $this;
+    }
 }

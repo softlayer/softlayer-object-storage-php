@@ -24,13 +24,13 @@ class ObjectStorage_Http_Abstract
     /**
      * Returns header by key
      *
-     * @param string $hederKey
+     * @param string $headerKey
      *
      * @return string
      */
-    public function getHeader($hederKey)
+    public function getHeader($headerKey)
     {
-        $key = $this->cleanHeaderKey($hederKey);
+        $key = $this->cleanHeaderKey($headerKey);
         if (isset($this->headers[$key])) {
             return $this->headers[$key];
         }
@@ -50,23 +50,34 @@ class ObjectStorage_Http_Abstract
     /**
      * Sets header
      *
-     * @param string $hederKey
+     * @param string $headerKey
      * @param string $value
      */
-    public function setHeader($hederKey = '', $value = '')
+    public function setHeader($headerKey = '', $value = '')
     {
-        $this->headers[$this->cleanHeaderKey($hederKey)] = (string) $value;
+        $this->headers[$this->cleanHeaderKey($headerKey)] = (string) $value;
+    }
+    
+    /**
+     * Sets raw header
+     *
+     * @param string $headerKey
+     * @param string $value
+     */
+    public function setRawHeader($headerKey = '', $value = '')
+    {
+        $this->headers[$headerKey] = $value;
     }
 
     /**
      * Deletes a header by key
      *
-     * @param string $hederKey
+     * @param string $headerKey
      */
-    public function deleteHeader($hederKey = '')
+    public function deleteHeader($headerKey = '')
     {
-        if (isset($this->headers[$this->cleanHeaderKey($hederKey)])) {
-            unset($this->headers[$this->cleanHeaderKey($hederKey)]);
+        if (isset($this->headers[$this->cleanHeaderKey($headerKey)])) {
+            unset($this->headers[$this->cleanHeaderKey($headerKey)]);
         }
     }
 
@@ -80,8 +91,8 @@ class ObjectStorage_Http_Abstract
         if (! is_array($headerArray)) {
             throw new ObjectStorage_Exception('HTTP headers must be an array.');
         }
-        foreach ($headerArray as $hederKey => $value) {
-            $this->setHeader($hederKey, $value);
+        foreach ($headerArray as $headerKey => $value) {
+            $this->setHeader($headerKey, $value);
         }
     }
 
@@ -105,8 +116,8 @@ class ObjectStorage_Http_Abstract
         $this->body = $body;
     }
 
-    protected function cleanHeaderKey($hederKey)
+    protected function cleanHeaderKey($headerKey)
     {
-        return ucfirst(strtolower($hederKey));
+        return ucfirst(strtolower($headerKey));
     }
 }
