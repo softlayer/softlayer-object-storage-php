@@ -55,18 +55,7 @@ class ObjectStorage_Http_Abstract
      */
     public function setHeader($headerKey = '', $value = '')
     {
-        $this->headers[$this->cleanHeaderKey($headerKey)] = (string) $value;
-    }
-    
-    /**
-     * Sets raw header
-     *
-     * @param string $headerKey
-     * @param string $value
-     */
-    public function setRawHeader($headerKey = '', $value = '')
-    {
-        $this->headers[$headerKey] = $value;
+        $this->headers[$this->cleanHeaderKey($headerKey)] = $value;
     }
 
     /**

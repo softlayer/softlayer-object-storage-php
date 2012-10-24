@@ -126,7 +126,7 @@ class ObjectStorage_Object extends ObjectStorage_Abstract
      */
     public function deleteAt($epochTimestamp)
     {
-        $this->request->setRawHeader('X-delete-at', $epochTimestamp);
+        $this->request->setHeader('X-Delete-At', $epochTimestamp);
         return $this;
     }
     
@@ -140,7 +140,7 @@ class ObjectStorage_Object extends ObjectStorage_Abstract
      */
     public function deleteAfter($seconds)
     {
-        $this->request->setRawHeader('X-delete-after', $seconds);
+        $this->request->setHeader('X-Delete-After', $seconds);
         return $this;
     }
 }
