@@ -43,6 +43,37 @@ class ObjectStorage_Container extends ObjectStorage_Abstract
     }
 
     /**
+     * Adds CNAME. This method sets a CNAME on the container.
+     * You have to call ObjectStorage_Abstract::create or ObjectStorage_Abstract_update method in order for this to take affect.
+     *
+     * @return ObjectStorage_Container
+     */
+    public function addCname($cnameUrl, $type='HTTP')
+    {
+        $this->setContext(self::CONTEXT_CDN);
+        $this->request->setHeader('X-CDN-CNAME', $cnameUrl);
+        $this->request->setHeader('X-CDN-CNAME-TYPE', $type);
+        $this->request->setHeader('X-CDN-CNAME-ACTION', 'add');
+
+        return $this;
+    }
+    
+    /**
+     * Removes CNAME. This method removes the CNAME from the container.
+     * You have to call ObjectStorage_Abstract::create or ObjectStorage_Abstract_update method in order for this to take affect.
+     *
+     * @return ObjectStorage_Container
+     */
+    public function removeCname($cnameUrl)
+    {
+        $this->setContext(self::CONTEXT_CDN);
+        $this->request->setHeader('X-CDN-CNAME', $cnameUrl);
+        $this->request->setHeader('X-CDN-CNAME-ACTION', 'delete');
+
+        return $this;
+    }
+
+    /**
      * (non-PHPdoc)
      * @see ObjectStorage_Abstract::update()
      */
