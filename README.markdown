@@ -161,6 +161,24 @@ $container = $objectStorage01->with('some_container')
 ...
 ```
 
+## Pagination
+```php
+/**
+ * You can traverse the directories through pages of data using markers.
+ *
+ */
+
+$container = $objectStorage01->with('some_container')
+                ->setParam('marker', '/some_container/last_item_name_on_previous_page.jpg')
+                ->get(25);
+
+// You can progress backwards through the directories using "end_marker" too
+
+$container = $objectStorage01->with('some_container')
+                ->setParam('end_marker', '/some_container/first_item_name_on_previous_page.jpg')
+                ->get(25);
+```
+
 ## Copy an object to another Object Storage
 
 ```php
