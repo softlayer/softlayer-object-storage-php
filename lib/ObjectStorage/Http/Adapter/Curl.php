@@ -13,7 +13,7 @@ class ObjectStorage_Http_Adapter_Curl implements ObjectStorage_Http_Adapter_Inte
     protected $method;
     protected $timeout = 30;
     protected $requestHeaders = array();
-    protected $fileHander = null;
+    protected $fileHandler = null;
 
     public function __construct($options = array())
     {
@@ -65,7 +65,7 @@ class ObjectStorage_Http_Adapter_Curl implements ObjectStorage_Http_Adapter_Inte
      */
     public function setFileHandler($handler)
     {
-        $this->fileHander = $handler;
+        $this->fileHandler = $handler;
     }
 
     /**
@@ -86,6 +86,7 @@ class ObjectStorage_Http_Adapter_Curl implements ObjectStorage_Http_Adapter_Inte
         $this->headers = array();
         $this->body    = '';
         $this->method  = '';
+        $this->fileHandler = null;
 
         return true;
     }
@@ -135,10 +136,10 @@ class ObjectStorage_Http_Adapter_Curl implements ObjectStorage_Http_Adapter_Inte
 
         if (in_array($method, array('PUT', 'POST'))) {
 
-            if ($this->fileHander != null) {
+            if ($this->fileHandler != null) {
 
                 curl_setopt($curl, CURLOPT_BINARYTRANSFER, true);
-                curl_setopt($curl, CURLOPT_INFILE, $this->fileHander);
+                curl_setopt($curl, CURLOPT_INFILE, $this->fileHandler);
                 curl_setopt($curl, CURLOPT_READFUNCTION, array(&$this, 'readFileCallback'));
 
             } else if ($this->body != '') {
