@@ -1,0 +1,23 @@
+{
+    "name": "softlayer/objectstorage",
+    "description": "PHP bindings for SoftLayer Object Storage",
+    "homepage": "https://github.com/softlayer/softlayer-object-storage-php",
+    "type": "library",
+    "keywords": ["objectstorage", "softlayer"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adam Shaw",
+            "email": "ashaw@softlayer.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.2"
+    },
+    "autoload": {
+        "psr-0": {
+            "ObjectStorage_": "lib/",
+            "": "lib/"
+        }
+    }
+}
