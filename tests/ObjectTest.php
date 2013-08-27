@@ -103,4 +103,12 @@ class ObjectTest extends BaseTest
 
         @unlink(self::$localFileName);
     }
+
+    /**
+     * @expectedException ObjectStorage_Exception_Http_NotFound
+     */
+    public function testDeleteNonExistingObject()
+    {
+        $result = self::$objectStorage->with('i-do-not-exist-' . time())->delete();
+    }
 }

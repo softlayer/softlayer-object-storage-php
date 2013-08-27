@@ -129,7 +129,7 @@ class ObjectStorage_Object extends ObjectStorage_Abstract
         $this->request->setHeader('X-Delete-At', $epochTimestamp);
         return $this;
     }
-    
+
     /**
      * Sets the number of seconds to wait before deleting an object
      * (This is converted into an 'X-Delete-At' header in the container

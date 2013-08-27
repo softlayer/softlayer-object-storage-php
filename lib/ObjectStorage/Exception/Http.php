@@ -1,19 +1,13 @@
 <?php
 
-class ObjectStorage_Exception_Http extends ObjectStorage_Exception
+class ObjectStorage_Exception_Http extends ObjectStorage_Exception implements ObjectStorage_Exception_Http_Interface
 {
     public function __construct($message = null, $code = 0)
     {
         parent::__construct($message, $code);
-
-        if (is_numeric($code) && $code > 0) {
-            $this->throwException($code, $message, $this->file, $this->line);
-        } else {
-            throw new ObjectStorage_Exception($message);
-        }
     }
 
-    protected function throwException($responseCode, $message, $class, $line)
+    public static function factory($message = null, $responseCode = 0)
     {
         $errorMessage = null;
         switch ($responseCode) {
@@ -71,10 +65,13 @@ class ObjectStorage_Exception_Http extends ObjectStorage_Exception
             $exception = 'ObjectStorage_Exception';
         }
 
-        $newException = new $exception($message);
-        $newException->setFile($class);
-        $newException->setLine($line);
+        $newException = new $exception($message, $responseCode);
 
-        throw $newException;
+        // Set the initial caller's file name and line number instead of this factory method
+        $stackTrace = debug_backtrace();
+        $newException->setFile($stackTrace[0]['file']);
+        $newException->setLine($stackTrace[0]['line']);
+
+        return $newException;
     }
 }

@@ -276,7 +276,7 @@ abstract class ObjectStorage_Abstract
     {
         return $this->response->getBody();
     }
-    
+
     /**
      * Sets a location to copy from for an object
      *

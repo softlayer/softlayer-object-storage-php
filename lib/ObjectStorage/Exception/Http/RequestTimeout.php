@@ -1,4 +1,4 @@
 <?php
 
-class ObjectStorage_Exception_Http_RequestTimeout extends ObjectStorage_Exception
+class ObjectStorage_Exception_Http_RequestTimeout extends ObjectStorage_Exception implements ObjectStorage_Exception_Http_Interface
 {}

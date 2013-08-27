@@ -158,7 +158,7 @@ class ObjectStorage
         if ($this->isAcceptableResponse($response->getStatusCode())) {
             return $response;
         } else {
-            throw new ObjectStorage_Exception_Http(null, $response->getStatusCode());
+            throw ObjectStorage_Exception_Http::factory(null, $response->getStatusCode());
         }
     }
 
@@ -299,7 +299,7 @@ class ObjectStorage
             $objectStorageObject->setResponse($response);
             return $objectStorageObject;
         } else {
-            throw new ObjectStorage_Exception_Http('Failed to retrieve "' . $objectStorageObject->getPath() . '".', $response->getStatusCode());
+            throw ObjectStorage_Exception_Http::factory('Failed to retrieve "' . $objectStorageObject->getPath() . '".', $response->getStatusCode());
         }
     }
 
@@ -324,13 +324,13 @@ class ObjectStorage
         try {
             $response = $client->request();
         } catch (Exception $e) {
-            throw new ObjectStorage_Exception_Http('Failed to retrieve users.');
+            throw ObjectStorage_Exception_Http::factory('Failed to retrieve users.');
         }
 
         if ($this->isAcceptableResponse($response->getStatusCode())) {
             return $response->getBody();
         } else {
-            throw new ObjectStorage_Exception_Http('Failed to retrieve users.', $response->getStatusCode());
+            throw ObjectStorage_Exception_Http::factory('Failed to retrieve users.', $response->getStatusCode());
         }
     }
 
@@ -375,14 +375,14 @@ class ObjectStorage
             if ($this->isAcceptableResponse($response->getStatusCode())) {
                 $objectStorageObject->setResponse($response);
             } else {
-                throw new ObjectStorage_Exception_Http('Failed to retrieve "' . $objectStorageObject->getPath() . '".', $response->getStatusCode());
+                throw ObjectStorage_Exception_Http::factory('Failed to retrieve "' . $objectStorageObject->getPath() . '".', $response->getStatusCode());
             }
         }
 
         $path = '/' . ltrim($objectStorageObject->getPath(), '/');
         foreach ($objectStorageObject->getResponse()->getHeaders() as $key => $val) {
             if (in_array(strtoupper($key), array('X-CDN-URL', 'X-CDN-STREAM-HTTP-URL', 'X-CDN-STREAM-FLASH-URL',
-            										'X-CDN-CUSTOM-URL', 'X-CDN-CUSTOM-STREAM-HTTP-URL', 'X-CDN-CUSTOM-STREAM-FLASH-URL'))) {
+                                                    'X-CDN-CUSTOM-URL', 'X-CDN-CUSTOM-STREAM-HTTP-URL', 'X-CDN-CUSTOM-STREAM-FLASH-URL'))) {
                 $cdnUrls[] = $val;
             }
         }
@@ -452,7 +452,7 @@ class ObjectStorage
             $objectStorageObject->setResponse($response);
             return $objectStorageObject;
         } else {
-            throw new ObjectStorage_Exception_Http('Failed to create ' . $objectStorageObject . '.', $response->getStatusCode());
+            throw ObjectStorage_Exception_Http::factory('Failed to create ' . $objectStorageObject . '.', $response->getStatusCode());
         }
     }
 
@@ -491,7 +491,7 @@ class ObjectStorage
             $objectStorageObject->setResponse($response);
             return $objectStorageObject;
         } else {
-            throw new ObjectStorage_Exception_Http('Failed to save ' . $objectStorageObject . '. ' . $response->getBody(), $response->getStatusCode());
+            throw ObjectStorage_Exception_Http::factory('Failed to save ' . $objectStorageObject . '. ' . $response->getBody(), $response->getStatusCode());
         }
     }
 
@@ -528,7 +528,7 @@ class ObjectStorage
             $objectStorageObject->setResponse($response);
             return true;
         } else {
-            throw new ObjectStorage_Exception_Http(null, $response->getStatusCode());
+            throw ObjectStorage_Exception_Http::factory(null, $response->getStatusCode());
         }
     }
 

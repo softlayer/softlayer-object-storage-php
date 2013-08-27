@@ -57,7 +57,7 @@ class ObjectStorage_Container extends ObjectStorage_Abstract
 
         return $this;
     }
-    
+
     /**
      * Removes CNAME. This method removes the CNAME from the container.
      * You have to call ObjectStorage_Abstract::create or ObjectStorage_Abstract_update method in order for this to take affect.
