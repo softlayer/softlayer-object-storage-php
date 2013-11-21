@@ -335,6 +335,94 @@ class ObjectStorage
     }
 
     /**
+     * Adds an Object Storage user
+     *
+     * @param string $username
+     * @param string $password
+     * @param bool $isAdminUser Indicates if the new user is an admin or not
+     *
+     * @return bool
+     *
+     * @throws ObjectStorage_Exception_Http
+     */
+    public function addUser($username, $password, $isAdminUser = false)
+    {
+        $newUsername = trim($username);
+        $password    = trim($password);
+        if (empty($newUsername)) {
+            throw new ObjectStorage_Exception('Username cannot be empty.');
+        }
+
+        if (empty($password)) {
+            throw new ObjectStorage_Exception('Password cannot be empty.');
+        }
+
+        $client = $this->getHttpClient();
+        $client->setMethod('PUT');
+
+        list($account, $username) = explode(':', $this->username);
+
+        $client->setUri($this->objectStorageHost . '/auth/v2/' . $account . '/' . $newUsername);
+        $client->setHeaders('X-Auth-Admin-User', $this->username);
+        $client->setHeaders('X-Auth-Admin-Key', $this->password);
+        $client->setHeaders('X-Auth-User-Key', $password);
+
+        if ($isAdminUser == true) {
+            $client->setHeaders('X-Auth-User-Admin', 'true');
+        }
+
+        try {
+            $response = $client->request();
+        } catch (Exception $e) {
+            throw ObjectStorage_Exception_Http::factory('Failed to create user.');
+        }
+
+        if ($this->isAcceptableResponse($response->getStatusCode())) {
+            return true;
+        } else {
+            throw ObjectStorage_Exception_Http::factory('Failed to create user.', $response->getStatusCode());
+        }
+    }
+
+    /**
+     * Deletes an Object Storage user
+     *
+     * @param string $username
+     *
+     * @return bool
+     *
+     * @throws ObjectStorage_Exception_Http
+     */
+    public function deleteUser($username)
+    {
+        $existingUsername = trim($username);
+        if (empty($existingUsername)) {
+            throw new ObjectStorage_Exception('Username cannot be empty.');
+        }
+
+        $client = $this->getHttpClient();
+        $client->setMethod('DELETE');
+
+        list($account, $username) = explode(':', $this->username);
+
+        $client->setUri($this->objectStorageHost . '/auth/v2/' . $account . '/' . $existingUsername);
+        $client->setHeaders('X-Auth-Admin-User', $this->username);
+        $client->setHeaders('X-Auth-Admin-Key', $this->password);
+
+        try {
+            $response = $client->request();
+        } catch (Exception $e) {
+            throw ObjectStorage_Exception_Http::factory('Failed to delete user.');
+        }
+
+        if ($this->isAcceptableResponse($response->getStatusCode())) {
+            return true;
+        } else {
+            throw ObjectStorage_Exception_Http::factory('Failed to delete user.', $response->getStatusCode());
+        }
+    }
+
+    /**
      * Returns ObjectStorage URL.
      * You will less likely use this method directly from ObjectStorage object. This method is used by ObjectStorage_Abstract object.
      *
