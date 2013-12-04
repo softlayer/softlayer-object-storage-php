@@ -145,8 +145,8 @@ class ObjectStorage
         $client = $this->getHttpClient();
 
         $client->setUri($this->objectStorageHost . '/auth/v1.0');
-        $client->setHeaders('X-Storage-User', $this->username);
-        $client->setHeaders('X-Storage-Pass', $this->password);
+        $client->setHeaders('X-Auth-User', $this->username);
+        $client->setHeaders('X-Auth-Key', $this->password);
         $client->setMethod('GET');
 
         try {
@@ -304,7 +304,8 @@ class ObjectStorage
     }
 
     /**
-     * Returns ObjectStorage user list and cluster information in JSON format
+     * Returns ObjectStorage user list and cluster information in JSON format.
+     * This will only work with users with admin privileges.
      *
      * @return string json data
      *
@@ -335,7 +336,7 @@ class ObjectStorage
     }
 
     /**
-     * Adds an Object Storage user
+     * Adds an Object Storage user.  Only works with administrative privileges.
      *
      * @param string $username
      * @param string $password
