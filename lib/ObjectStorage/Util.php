@@ -28,7 +28,7 @@ class ObjectStorage_Util
 
         $path = implode(DIRECTORY_SEPARATOR, $directoryChunks) . '.php';
 
-        if(file_exists( $objectStorageDirectory . '/'.$path)){
+        if (file_exists( $objectStorageDirectory . '/' . $path)) {
             require_once($path);
         }
     }
