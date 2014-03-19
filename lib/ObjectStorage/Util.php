@@ -28,7 +28,9 @@ class ObjectStorage_Util
 
         $path = implode(DIRECTORY_SEPARATOR, $directoryChunks) . '.php';
 
-        require_once($path);
+        if (file_exists($objectStorageDirectory . DIRECTORY_SEPARATOR . $path)) {
+            require_once($path);
+        }
     }
 
     public static function getMimeByName($fileName = '')
@@ -95,7 +97,7 @@ class ObjectStorage_Util
         } else if (isset($mimeTypes[$extension])) {
             return $mimeTypes[$extension];
         } else if (function_exists('mime_content_type')) {
-            return mime_content_type($filename);
+            return mime_content_type($fileName);
         } else {
             return 'application/octet-stream';
         }
