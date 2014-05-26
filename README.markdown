@@ -43,6 +43,10 @@ $objectStorage = new ObjectStorage($host, $username, $password, $options);
 ## Basic CRUD
 
 ```php
+$containerList = $objectStorage->with()->get();
+
+$containerName = $containerList->getPath();
+
 $shallowContainer = $objectStorage->with('example_container');
 
 $newContainer = $shallowContainer->create();
