@@ -542,6 +542,8 @@ abstract class ObjectStorage_Abstract
 
         try {
             return $this->objectStorage->get($this);
+        } catch (ObjectStorage_Exception_Http_NotFound $e) {
+            throw $e;
         } catch (Exception $e) {
             $this->objectStorage->reloadAuthenticationData();
             return $this->objectStorage->get($this);
@@ -557,6 +559,8 @@ abstract class ObjectStorage_Abstract
     {
         try {
             return $this->objectStorage->get($this, false);
+        } catch (ObjectStorage_Exception_Http_NotFound $e) {
+            throw $e;
         } catch (Exception $e) {
             $this->objectStorage->reloadAuthenticationData();
             return $this->objectStorage->get($this, false);
@@ -602,6 +606,8 @@ abstract class ObjectStorage_Abstract
     {
         try {
             return $this->objectStorage->delete($this);
+        } catch (ObjectStorage_Exception_Http_NotFound $e) {
+            throw $e;
         } catch (Exception $e) {
             $this->objectStorage->reloadAuthenticationData();
             return $this->objectStorage->delete($this);
