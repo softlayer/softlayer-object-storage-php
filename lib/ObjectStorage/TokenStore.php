@@ -29,7 +29,7 @@ class ObjectStorage_TokenStore
      *
      * @throws ObjectStorage_Exception_TokenStore
      *
-     * @return ObjectStorage_TokenStore
+     * @return ObjectStorage_TokenStore_Interface
      */
     public static function factory($type, $config = array())
     {
