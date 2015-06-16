@@ -12,6 +12,7 @@ class ObjectStorage
 {
     protected $httpClient;
     protected $httpClientAdapterTimeout = 10;
+    protected $httpClientAdapterConnectTimeout = null;
     protected $httpClientAdapterIdendifier;
 
     protected $objectStorageHost;
@@ -67,7 +68,11 @@ class ObjectStorage
         }
 
         if (isset($options['timeout'])) {
-            $this->httpClientAdapterTimeout    = $options['timeout'];
+            $this->httpClientAdapterTimeout = $options['timeout'];
+        }
+
+        if (isset($options['connect_timeout'])) {
+            $this->httpClientAdapterConnectTimeout = $options['connect_timeout'];
         }
     }
 
@@ -188,7 +193,10 @@ class ObjectStorage
     protected function getHttpClient()
     {
         if (! isset($this->httpClient)) {
-            $this->httpClient = ObjectStorage_Http_Client::factory($this->httpClientAdapterIdendifier, array('timeout' => $this->httpClientAdapterTimeout));
+            $this->httpClient = ObjectStorage_Http_Client::factory($this->httpClientAdapterIdendifier, array(
+                'timeout'         => $this->httpClientAdapterTimeout,
+                'connect_timeout' => $this->httpClientAdapterConnectTimeout,
+            ));
         }
         // Remove previous request headers and other trails
         $this->httpClient->reset();

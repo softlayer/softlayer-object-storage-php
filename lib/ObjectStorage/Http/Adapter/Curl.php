@@ -12,6 +12,7 @@ class ObjectStorage_Http_Adapter_Curl implements ObjectStorage_Http_Adapter_Inte
     protected $body;
     protected $method;
     protected $timeout = 30;
+    protected $connectTimeout = null;
     protected $requestHeaders = array();
     protected $fileHandler = null;
 
@@ -29,6 +30,10 @@ class ObjectStorage_Http_Adapter_Curl implements ObjectStorage_Http_Adapter_Inte
 
         if (isset($options['timeout']) && is_numeric($options['timeout'])) {
             $this->timeout = $options['timeout'];
+        }
+
+        if (isset($options['connect_timeout']) && is_numeric($options['connect_timeout'])) {
+            $this->connectTimeout = $options['connect_timeout'];
         }
     }
 
@@ -117,6 +122,10 @@ class ObjectStorage_Http_Adapter_Curl implements ObjectStorage_Http_Adapter_Inte
         curl_setopt($curl, CURLOPT_URL, $this->uri);
         curl_setopt($curl, CURLOPT_TIMEOUT, $this->timeout);
         curl_setopt($curl, CURLOPT_HTTPHEADER, array($requestHeaders));
+
+        if ( $this->connectTimeout !== null ) {
+            curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, $this->connectTimeout);
+        }
 
         $method = strtoupper($this->method);
         switch($method) {
