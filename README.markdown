@@ -43,6 +43,10 @@ $objectStorage = new ObjectStorage($host, $username, $password, $options);
 ## Basic CRUD
 
 ```php
+$containerList = $objectStorage->with()->get();
+
+$containerName = $containerList->getPath();
+
 $shallowContainer = $objectStorage->with('example_container');
 
 $newContainer = $shallowContainer->create();
@@ -130,7 +134,7 @@ $results = $objectStorage05->with('')->setContext('cdn')
 $container = $objectStorage->with('another_container')->get();
 if (count($container->objects) > 0) {
     foreach ($container->objects as $shallowObject) {
-        $object = $shallowObject->get();
+        $object = $shallowObject->get(); // Defaults to 100 results, pass a parameter to override eg. ->get(500)
 
         echo $object->getUrl();
         echo $object->getBody();
